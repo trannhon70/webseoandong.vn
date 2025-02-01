@@ -51,7 +51,6 @@
             <div class="item">
                <img width="100%" height="100%" loading="lazy" src="<?php echo $local ?>/images/banner/banner_3.webp" alt="...">
             </div>
-            
         </div>
     </div>
 </header>
