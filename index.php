@@ -8,5 +8,6 @@
 
     <main>
         <?php include_once "./layout/header_layout.php" ?>
-        ádasdas
     </main>
+
+    <?php include_once "./inc/footer.php" ?>

@@ -35,3 +35,58 @@
     height: 50px;
     font-size: var(--font-size-16);
 }
+
+.header__bottom-container-ul {
+    list-style: none;
+    display: var(--display-flex);
+    align-items: var(--center);
+    justify-content: space-between;
+    padding: 3px 0px;
+    width: var(--width-100);
+}
+
+.header__bottom-container-ul-li {
+    padding: 0px 10px;
+    height: 40px;
+    display: var(--display-flex);
+    align-items: var(--center);
+}
+
+.header__bottom-container-ul-li:hover > a{
+    color: red;
+    transition: all .5s;
+}
+.header__bottom-container-ul-li > a{
+    text-decoration: none;
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-700);
+    display: var(--display-flex);
+    align-items: var(--center);
+    gap: 10px;
+}
+
+.header__carousel{
+    position: var(--relative);
+}
+
+.owl-dots{
+    position: var(--absolute);
+    bottom: 10px;
+    left: 0;
+    display: var(--display-flex);
+    align-items: var(--center);
+    justify-content: var(--center);
+    width: var(--width-100);
+}
+
+.owl-theme .owl-dots .owl-dot span{
+    width: 15px;
+    height: 15px;
+    background: var(--background-739DFF);
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: var(--background-131A85);
+}
