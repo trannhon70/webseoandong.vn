@@ -252,17 +252,51 @@ class post
     }
   }
 
-  // get by slug bài viết chi tiết
-  // public function getBySlugBaiViet($slug)
-  // {
-  //   $query = "SELECT * FROM admin_baiviet WHERE slug= '$slug' LIMIT 1";
-  //   $result = $this->db->select($query);
-  //   if($result && $result->num_rows > 0){
-  //     return $result->fetch_assoc();
-  //   } else {
-  //     return 'slug không đúng!';
-  //   }
-  // }
+  public function getBaiViet_bySlug($id)
+  {
+    $id = mysqli_real_escape_string($this->db->link, $id);
+    $query = "SELECT baiviet.id, baiviet.title, baiviet.slug, baiviet.tieu_de, baiviet.id_benh,baiviet.id_khoa, baiviet.content,baiviet.img,baiviet.descriptions,baiviet.keyword,
+    benh.name AS name_benh, 
+    benh.id_khoa AS id_khoa, 
+    khoa.name AS name_khoa 
+    FROM admin_baiviet baiviet 
+    JOIN admin_benh benh ON baiviet.id_benh = benh.id 
+    JOIN admin_khoa khoa ON khoa.id = benh.id_khoa 
+    WHERE baiviet.slug = '$id' 
+    LIMIT 1";
+    $result = $this->db->select($query);
+    if ($result) {
+      return $result->fetch_assoc();
+    } else {
+      return null;
+    }
+  }
+
+  public function getBaiVietDauTienByBenh ($slug_benh){
+   
+    $slug_benh = mysqli_real_escape_string($this->db->link, $slug_benh);
+    $querybenh = "SELECT * FROM admin_benh WHERE slug = '$slug_benh' LIMIT 1 ";
+    $resultBenh = $this->db->select($querybenh);
+    if($resultBenh){
+      $benh = $resultBenh->fetch_assoc();
+      $id = $benh['id'];
+      $query = "SELECT baiviet.id, baiviet.title, baiviet.slug, baiviet.tieu_de, baiviet.id_benh,baiviet.id_khoa, baiviet.content, ,baiviet.img,baiviet.descriptions,baiviet.keyword,
+      benh.name AS name_benh, 
+      benh.id_khoa AS id_khoa, 
+      khoa.name AS name_khoa 
+      FROM admin_baiviet baiviet 
+      JOIN admin_benh benh ON baiviet.id_benh = benh.id 
+      JOIN admin_khoa khoa ON khoa.id = benh.id_khoa 
+      WHERE baiviet.id_benh = '$id' ORDER BY baiviet.id DESC LIMIT 1";
+      $result = $this->db->select($query);
+      if ($result) {
+        return $result->fetch_assoc();
+      } else {
+        return 'Hiện tại dữ liệu này chưa có bài viết!';
+      }
+    }
+   
+  }
 }
 
 ?>

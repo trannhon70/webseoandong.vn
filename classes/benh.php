@@ -125,6 +125,31 @@ include_once($filepath . '/../helpers/format.php');
         }
       }
 
+      public function getDSBaiVietLienQuan($slug)
+      {
+        $query = "SELECT id_benh FROM admin_baiviet WHERE slug = '$slug' LIMIT 1 ";
+        $result = $this->db->select($query);
+        if ($result && $result->num_rows > 0) {
+          $benh = $result->fetch_assoc();
+          if ($benh) {
+            $queryBaiviet = "SELECT * FROM `admin_baiviet` WHERE id_benh = '$benh[id_benh]' AND slug != '$slug' ORDER BY id DESC LIMIT 5 ";
+            $resultBaiViet = $this->db->select($queryBaiviet);
+            if ($resultBaiViet === false) {
+              $benh['data'] = [];
+              error_log("Query error: ");
+            } else {
+              $benh['data'] = [];
+              while ($baiviet = $resultBaiViet->fetch_assoc()) {
+                $benh['data'][] = $baiviet;
+              }
+            }
+          }
+          return $benh;
+        } else {
+          return 'slug không tồn tại';
+        }
+      }
+
   }
   
 ?>

@@ -123,10 +123,10 @@ setcookie(
                         href: 'css/header.min.css',
                         id: 'desktop-0'
                     },
-                    // {
-                    //     href: 'css/footer.min.css',
-                    //     id: 'desktop-1'
-                    // },
+                    {
+                        href: 'css/footer.min.css',
+                        id: 'desktop-1'
+                    },
 
                 ];
                 desktopLink.forEach(({

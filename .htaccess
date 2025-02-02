@@ -3,7 +3,4 @@ RewriteEngine On
 # Rewrite for trang-chu.html
 RewriteRule ^trang-chu\.html$ index.php [L]
 
-RewriteRule ^danh-muc/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)\.html$ danh-muc.php?khoa=$1&benh=$2&page=$3 [L]
-
-#Rewrite for chi-tiet-bai-viet
-RewriteRule ^([a-zA-Z0-9_-]+)\.html$ chi-tiet-bai-viet.php?slug=$1
+RewriteRule ^([a-zA-Z0-9_-]+)\.html$ danh-muc.php?tintuc=$1 [L]

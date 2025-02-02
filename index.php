@@ -260,7 +260,7 @@
             });
         });
     </script>
-
+    <script defer src="<?php echo $local ?>/js/carousel.min.js" ></script>
 
 
 
