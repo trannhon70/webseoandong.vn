@@ -100,26 +100,143 @@
                 <div class="health__container-title">Chuyên đề sức khỏe</div>
                 <div class="carousel-container">
                     <div class="carousel-track">
-                        <div class="carousel-item">Item 1</div>
-                        <div class="carousel-item">Item 2</div>
-                        <div class="carousel-item">Item 3</div>
-                        <div class="carousel-item">Item 4</div>
-                        <div class="carousel-item">Item 5</div>
-                        <div class="carousel-item">Item 6</div>
-                        <div class="carousel-item">Item 7</div>
-                        <div class="carousel-item">Item 8</div>
+                        <div class="carousel-item">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/namgioi.webp" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/nugioi.webp" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/congdong.webp" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/dalieu.webp" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/namgioi.webp" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/nugioi.webp" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/congdong.webp" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/dalieu.webp" alt="...">
+                        </div>
                     </div>
-                    <button class="carousel-btn carousel-prev">←</button>
-                    <button class="carousel-btn carousel-next">→</button>
+
                 </div>
-                <!-- <div class="health-carousel ">
-                    <div class="item"><img loading="lazy" src="images/card/namgioi.webp" alt="..."></div>
-                    <div class="item"><img loading="lazy" src="images/card/nugioi.webp" alt="..."></div>
-                    <div class="item"><img loading="lazy" src="images/card/congdong.webp" alt="..."></div>
-                    <div class="item"><img loading="lazy" src="images/card/dalieu.webp" alt="..."></div>
-                </div> -->
+                <hr>
+                <div class="health__container-bottom">
+                    <button class="health__container-bottom-left">
+                        Xem tất cả chuyên đề
+                        <img width="13px" height="13px" loading="lazy" src="<?php echo $local ?>/images/icons/icon_next.webp" alt="...">
+                    </button>
+                    <div>
+                        <button class="carousel-btn carousel-prev">←</button>
+                        <button class="carousel-btn carousel-next">→</button>
+                    </div>
+                </div>
             </div>
         </section>
+        <section class="banner__ngang">
+            <img width="100%" height="auto" src="<?php echo $local ?>/images/banner/banner_4.webp" alt="...">
+        </section>
+
+        <section class="health">
+            <div class="health__container">
+                <div class="health__container-title">Đội ngũ chuyên gia của chúng tôi</div>
+                <div class="carousel-container">
+                    <div class=" carousel-track-2">
+                        <div class="carousel-item1">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/namgioi.webp" alt="...">
+                        </div>
+                        <div class="carousel-item1">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/nugioi.webp" alt="...">
+                        </div>
+                        <div class="carousel-item1">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/congdong.webp" alt="...">
+                        </div>
+                        <div class="carousel-item1">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/dalieu.webp" alt="...">
+                        </div>
+                        <div class="carousel-item1">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/namgioi.webp" alt="...">
+                        </div>
+                        <div class="carousel-item1">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/nugioi.webp" alt="...">
+                        </div>
+                        <div class="carousel-item1">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/congdong.webp" alt="...">
+                        </div>
+                        <div class="carousel-item1">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/dalieu.webp" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="health__container-bottom">
+                    <button class="health__container-bottom-left">
+                        Đặt lịch tư vấn
+                        <img style="margin-left: 5px;" width="30px" height="30px" loading="lazy" src="images/icons/icon_heat.webp" alt="...">
+                    </button>
+                    <div>
+                        <button class="carousel-btn  carousel-prev-2">←</button>
+                        <button class="carousel-btn  carousel-next-2">→</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="post">
+            <div class="post__list">
+                <div class="post__list-item">
+                    <div class="post__list-item-title">sức khỏe nam giới</div>
+                    <a href="<?php echo $local ?>" class="post__list-item-card">
+                        <div class="post__list-item-card-left">
+                            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus officia sed similique recusandae libero incidunt soluta, ipsum animi. Enim totam delectus distinctio doloribus dolorem, soluta incidunt in atque cupiditate provident.</h5>
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet, atque maiores labore voluptatem excepturi repellat iusto dolorem quis, dolore voluptates sequi fugiat eius corrupti accusantium recusandae unde illo quas!</span>
+                        </div>
+                        <div class="post__list-item-card-right">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/card2.png" alt="...">
+                        </div>
+                    </a>
+                    <a href="<?php echo $local ?>" class="post__list-item-card">
+                        <div class="post__list-item-card-left">
+                            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus officia sed similique recusandae libero incidunt soluta, ipsum animi. Enim totam delectus distinctio doloribus dolorem, soluta incidunt in atque cupiditate provident.</h5>
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet, atque maiores labore voluptatem excepturi repellat iusto dolorem quis, dolore voluptates sequi fugiat eius corrupti accusantium recusandae unde illo quas!</span>
+                        </div>
+                        <div class="post__list-item-card-right">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/card2.png" alt="...">
+                        </div>
+                    </a>
+                    <button>Xem thêm >></button>
+                </div>
+                <div class="post__list-item">
+                    <div class="post__list-item-title">Dinh dưỡng cho mọi nhà</div>
+                    <a href="<?php echo $local ?>" class="post__list-item-card">
+                        <div class="post__list-item-card-left">
+                            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus officia sed similique recusandae libero incidunt soluta, ipsum animi. Enim totam delectus distinctio doloribus dolorem, soluta incidunt in atque cupiditate provident.</h5>
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet, atque maiores labore voluptatem excepturi repellat iusto dolorem quis, dolore voluptates sequi fugiat eius corrupti accusantium recusandae unde illo quas!</span>
+                        </div>
+                        <div class="post__list-item-card-right">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/card2.png" alt="...">
+                        </div>
+                    </a>
+                    <a href="<?php echo $local ?>" class="post__list-item-card">
+                        <div class="post__list-item-card-left">
+                            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus officia sed similique recusandae libero incidunt soluta, ipsum animi. Enim totam delectus distinctio doloribus dolorem, soluta incidunt in atque cupiditate provident.</h5>
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet, atque maiores labore voluptatem excepturi repellat iusto dolorem quis, dolore voluptates sequi fugiat eius corrupti accusantium recusandae unde illo quas!</span>
+                        </div>
+                        <div class="post__list-item-card-right">
+                            <img width="100%" height="auto" loading="lazy" src="images/card/card2.png" alt="...">
+                        </div>
+                    </a>
+                    <button>Xem thêm >></button>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <script>
