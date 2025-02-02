@@ -651,32 +651,3 @@
     background-size: contain; /* Hoặc cover nếu cần */
 }
 
-.custom-h2-style{
-    background-image: url(../images/background/bg_h2.webp);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-   width: 100%;
-   min-height: auto;
-    padding: 10px 7% 10px 60px;
-    border-top-left-radius: 20px;
-    color: var(--color-white);
-    font-size: var(--font-size-20);
-    font-weight: var(--font-weight-700);
-    text-transform: capitalize;
-    text-align: left;
-    margin: 7px 0px;
-    position: relative;
-    box-sizing: border-box;
-}
-
-.custom-h2-style::after {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 0;
-    width: 60px; /* Độ rộng của hình ảnh */
-    height: 40px; /* Chiều cao của hình ảnh */
-    background-image: url("../images/icons/icon_h2.webp");
-    background-repeat: no-repeat;
-    background-size: contain; /* Hoặc cover nếu cần */
-}

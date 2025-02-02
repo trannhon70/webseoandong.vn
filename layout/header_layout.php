@@ -54,6 +54,7 @@
         </div>
     </div>
 </header>
+<div id="toast-container"></div>
 
 <script>
     $(document).ready(function() {
