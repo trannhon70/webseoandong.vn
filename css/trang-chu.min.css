@@ -308,12 +308,18 @@
     border: 1px solid var(--color-739DFF);
 }
 
-.post__list-item > button {
+.post__list-item-card-right > img {
+    border-radius: 8px;
+}
+
+.post__list-item > .button {
     background-color: var(--background-E7F4FF);
     color: var(--color-131A85);
     font-size: var(--font-size-14);
     margin-top: 10px;
     outline: none;
     border: 0px;
+    margin-top: 10px;
+    display: var(--display-flex);
 }
 

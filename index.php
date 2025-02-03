@@ -6,8 +6,14 @@
 </head>
 <?php
 $limit = 5;
+
+$limitSuckhoe = isset($_GET['suckhoe']) ? $_GET['suckhoe'] : 5;
+$limitdinhDuong = isset($_GET['dinhduong']) ? $_GET['dinhduong'] : 5;
 $postNew = $bai_viet->getDSBaiVietNew($limit);
 $postView = $bai_viet->getDSBaiVietView($limit);
+
+$postSuckhoe = $bai_viet->getDSBaiVietByIdBenh(27, $limitSuckhoe);
+$postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
 ?>
 
 <body>
@@ -204,51 +210,47 @@ $postView = $bai_viet->getDSBaiVietView($limit);
                 </div>
             </div>
         </section>
-        <section class="post">
+        <section class="post" id="targetSection">
             <div class="post__list">
                 <div class="post__list-item">
                     <div class="post__list-item-title">sức khỏe nam giới</div>
-                    <a href="<?php echo $local ?>" class="post__list-item-card">
-                        <div class="post__list-item-card-left">
-                            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus officia sed similique recusandae libero incidunt soluta, ipsum animi. Enim totam delectus distinctio doloribus dolorem, soluta incidunt in atque cupiditate provident.</h5>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet, atque maiores labore voluptatem excepturi repellat iusto dolorem quis, dolore voluptates sequi fugiat eius corrupti accusantium recusandae unde illo quas!</span>
-                        </div>
-                        <div class="post__list-item-card-right">
-                            <img width="100%" height="auto" loading="lazy" src="images/card/card2.png" alt="...">
-                        </div>
-                    </a>
-                    <a href="<?php echo $local ?>" class="post__list-item-card">
-                        <div class="post__list-item-card-left">
-                            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus officia sed similique recusandae libero incidunt soluta, ipsum animi. Enim totam delectus distinctio doloribus dolorem, soluta incidunt in atque cupiditate provident.</h5>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet, atque maiores labore voluptatem excepturi repellat iusto dolorem quis, dolore voluptates sequi fugiat eius corrupti accusantium recusandae unde illo quas!</span>
-                        </div>
-                        <div class="post__list-item-card-right">
-                            <img width="100%" height="auto" loading="lazy" src="images/card/card2.png" alt="...">
-                        </div>
-                    </a>
-                    <button>Xem thêm >></button>
+                    <?php if (!empty($postSuckhoe)) {
+                        foreach ($postSuckhoe as $post) {
+                    ?>
+                            <a href="<?php echo $local ?>/<?php echo $post['slug'] ?>" class="post__list-item-card" onclick="handleClick(event,'<?php echo $post['slug']; ?>')">
+                                <div class="post__list-item-card-left">
+                                    <h5><?php echo $post['title'] ?></h5>
+                                    <span><?php echo $post['descriptions'] ?></span>
+                                </div>
+                                <div class="post__list-item-card-right">
+                                    <img width="100%" height="auto" loading="lazy" src="<?php echo $local ?>/admin/uploads/<?php echo $post['img'] ?>" alt="...">
+                                </div>
+                            </a>
+                        <?php }
+                    } else { ?>
+                        <div style="display: flex; align-items: center; justify-content: center; height: 300px; ">Chưa có bài viết nào</div>
+                    <?php } ?>
+                    <a href="<?php echo $local ?>?suckhoe=<?php echo $limitSuckhoe + 5 ?>&dinhduong=<?php echo $limitdinhDuong?>#targetSection" class="button" >Xem thêm >></a>
                 </div>
                 <div class="post__list-item">
                     <div class="post__list-item-title">Dinh dưỡng cho mọi nhà</div>
-                    <a href="<?php echo $local ?>" class="post__list-item-card">
-                        <div class="post__list-item-card-left">
-                            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus officia sed similique recusandae libero incidunt soluta, ipsum animi. Enim totam delectus distinctio doloribus dolorem, soluta incidunt in atque cupiditate provident.</h5>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet, atque maiores labore voluptatem excepturi repellat iusto dolorem quis, dolore voluptates sequi fugiat eius corrupti accusantium recusandae unde illo quas!</span>
-                        </div>
-                        <div class="post__list-item-card-right">
-                            <img width="100%" height="auto" loading="lazy" src="images/card/card2.png" alt="...">
-                        </div>
-                    </a>
-                    <a href="<?php echo $local ?>" class="post__list-item-card">
-                        <div class="post__list-item-card-left">
-                            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus officia sed similique recusandae libero incidunt soluta, ipsum animi. Enim totam delectus distinctio doloribus dolorem, soluta incidunt in atque cupiditate provident.</h5>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt amet, atque maiores labore voluptatem excepturi repellat iusto dolorem quis, dolore voluptates sequi fugiat eius corrupti accusantium recusandae unde illo quas!</span>
-                        </div>
-                        <div class="post__list-item-card-right">
-                            <img width="100%" height="auto" loading="lazy" src="images/card/card2.png" alt="...">
-                        </div>
-                    </a>
-                    <button>Xem thêm >></button>
+                    <?php if (!empty($postdinhDuong)) {
+                        foreach ($postdinhDuong as $post) {
+                    ?>
+                            <a href="<?php echo $local ?>/<?php echo $post['slug'] ?>" class="post__list-item-card" onclick="handleClick(event,'<?php echo $post['slug']; ?>')">
+                                <div class="post__list-item-card-left">
+                                    <h5><?php echo $post['title'] ?></h5>
+                                    <span><?php echo $post['descriptions'] ?></span>
+                                </div>
+                                <div class="post__list-item-card-right">
+                                    <img width="100%" height="auto" loading="lazy" src="<?php echo $local ?>/admin/uploads/<?php echo $post['img'] ?>" alt="...">
+                                </div>
+                            </a>
+                        <?php }
+                    } else { ?>
+                        <div style="display: flex; align-items: center; justify-content: center; height: 300px; ">Chưa có bài viết nào</div>
+                    <?php } ?>
+                    <a href="<?php echo $local ?>?suckhoe=<?php echo $limitSuckhoe?>&dinhduong=<?php echo $limitdinhDuong  + 5 ?>#targetSection" class="button" >Xem thêm >></a>
                 </div>
             </div>
         </section>
@@ -277,27 +279,27 @@ $postView = $bai_viet->getDSBaiVietView($limit);
         });
     </script>
     <script defer src="<?php echo $local ?>/js/carousel.min.js"></script>
-    <script>
+    <script defer >
         function handleClick(event, slug) {
             event.preventDefault();
-            console.log("Slug của bài viết:", slug);
+            // console.log("Slug của bài viết:", slug);
             let formData = {
-            slug: slug,
-        };
-        const xhr = new XMLHttpRequest();
-            xhr.open("POST", "<?php echo $local ?>/api/bai-viet/update-view.php", true); 
+                slug: slug,
+            };
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "<?php echo $local ?>/api/bai-viet/update-view.php", true);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     let response = JSON.parse(xhr.responseText);
-                    
+
                 }
             };
             xhr.send(JSON.stringify(formData));
             // Ví dụ: Xử lý thêm trước khi chuyển trang
             setTimeout(() => {
                 window.location.href = `<?php echo $local ?>/` + slug + ".html";
-            }, 500); 
+            }, 500);
         }
     </script>
 

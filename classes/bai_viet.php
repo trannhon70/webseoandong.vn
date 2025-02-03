@@ -317,6 +317,27 @@ class post
     }
    
   }
+
+  public function getDSBaiVietByIdBenh($idBenh, $limit)
+  {
+      $idBenh = intval($idBenh); // Đảm bảo idBenh là số để tránh SQL Injection
+      $limit = intval($limit); // Đảm bảo limit là số
+      $query = "SELECT admin_baiviet.title, admin_baiviet.descriptions, admin_baiviet.img, admin_baiviet.slug,
+                       khoa.name AS khoa_name
+                FROM admin_baiviet
+                JOIN admin_khoa khoa ON admin_baiviet.id_khoa = khoa.id
+                WHERE admin_baiviet.id_benh = $idBenh
+                ORDER BY admin_baiviet.id DESC 
+                LIMIT $limit";
+      $result = $this->db->select($query);
+      $data = [];
+      if ($result) {
+          while ($row = $result->fetch_assoc()) {
+              $data[] = $row;
+          }
+      }
+      return $data;
+  }
 }
 
 ?>
