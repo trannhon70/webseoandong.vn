@@ -61,6 +61,11 @@
 .content__list-left-img {
     border: 1px solid #739dff;
     border-radius: 6px;
+    display: var(--display-flex);
+}
+
+.content__list-left-img > img {
+    border-radius: 6px;
 }
 
 .content__list-left-title {
@@ -118,6 +123,11 @@
 .content__list-right-card-right {
     width: 30%;
     border: 1px solid #739dff;
+    border-radius: 6px;
+    display: var(--display-flex);
+}
+
+.content__list-right-card-right > img {
     border-radius: 6px;
 }
 

@@ -17,20 +17,20 @@ $data = json_decode(file_get_contents("php://input"), true);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($data)) {
     // Xử lý và chuẩn bị dữ liệu
-    $id = isset($data['id']) ? htmlspecialchars(strip_tags($data['id'])) : '';
-    if ($id) {
-        // Truy vấn bài viết theo ID
-        $sql = "SELECT * FROM `admin_baiviet` WHERE id = '$id'";
+    $slug = isset($data['slug']) ? htmlspecialchars(strip_tags($data['slug'])) : '';
+    if ($slug) {
+        // Truy vấn bài viết theo slug
+        $sql = "SELECT * FROM `admin_baiviet` WHERE slug = '$slug'";
         $result = $db->select($sql);
         if ($result) {
             $post = $result->fetch_assoc();
             $currentViews = $post['view'];
             $newViews = $currentViews + 1;
             // Cập nhật số lượt xem mới
-            $updateSql = "UPDATE `admin_baiviet` SET view = '$newViews' WHERE id = '$id'";
+            $updateSql = "UPDATE `admin_baiviet` SET view = '$newViews' WHERE slug = '$slug'";
             $updateResult = $db->update($updateSql);
             if ($updateResult) {
-                echo json_encode(['status' => 'success', 'message' => 'Cập nhật thành công!', 'data' => ['id' => $id, 'new_views' => $newViews]]);
+                echo json_encode(['status' => 'success', 'message' => 'Cập nhật thành công!', 'data' => ['slug' => $slug, 'new_views' => $newViews]]);
             } else {
                 echo json_encode(['status' => 'error', 'message' => 'Lỗi khi cập nhật số lượt xem']);
             }

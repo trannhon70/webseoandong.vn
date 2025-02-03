@@ -209,7 +209,7 @@ class post
   //get danh sách bài viết  mới nhất
   public function getDSBaiVietNew($limit)
   {
-    $query = "SELECT admin_baiviet.title, admin_baiviet.descriptions,
+    $query = "SELECT admin_baiviet.title, admin_baiviet.descriptions, admin_baiviet.img,admin_baiviet.slug,
     khoa.name AS khoa_name
     FROM admin_baiviet
     JOIN admin_khoa khoa ON admin_baiviet.id_khoa = khoa.id
@@ -225,6 +225,26 @@ class post
 
     return $data;
   }
+
+   //get danh sách bài viết  mới nhất
+   public function getDSBaiVietView($limit)
+   {
+     $query = "SELECT admin_baiviet.title, admin_baiviet.descriptions, admin_baiviet.img, admin_baiviet.slug,
+     khoa.name AS khoa_name
+     FROM admin_baiviet
+     JOIN admin_khoa khoa ON admin_baiviet.id_khoa = khoa.id
+     ORDER BY admin_baiviet.view DESC LIMIT $limit";
+     $result = $this->db->select($query);
+ 
+     $data = [];
+     if ($result) {
+       while ($row = $result->fetch_assoc()) {
+         $data[] = $row;
+       }
+     }
+ 
+     return $data;
+   }
 
   // get danh sách bài viết liên quan 
   public function getDSBaiVietLienQuan($slug)

@@ -4,6 +4,11 @@
 <title>Phòng khám đa khoa</title>
 <link rel="stylesheet" href="css/trang-chu.min.css">
 </head>
+<?php
+$limit = 5;
+$postNew = $bai_viet->getDSBaiVietNew($limit);
+$postView = $bai_viet->getDSBaiVietView($limit);
+?>
 
 <body>
 
@@ -20,79 +25,90 @@
             </ul>
             <!-- Nội dung từng tab -->
             <div id="new" class="tab-content tab-content-active">
-                <div class="content__list">
-                    <a href="<?php echo $local ?>" class="content__list-left">
-                        <div class="content__list-left-img">
-                            <img loading="lazy" width="100%" height="300px" src="<?php echo $local ?>/images/card/card.png" alt="...">
-                        </div>
-                        <div class="content__list-left-title">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur mollitia autem illum eligendi, repellat magnam cupiditate atque? Inventore pariatur, facilis sint aliquam, sunt perferendis, veniam eos facere aspernatur officia repellat.
-                        </div>
-                        <div class="content__list-left-text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur mollitia autem illum eligendi, repellat magnam cupiditate atque? Inventore pariatur, facilis sint aliquam, sunt perferendis, veniam eos facere aspernatur officia repellat.
-                        </div>
-                    </a>
-                    <div class="content__list-right">
-                        <a href="<?php echo $local ?>" class="content__list-right-card">
-                            <div class="content__list-right-card-left">
-                                <div class="content__list-left-title">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur mollitia autem illum eligendi, repellat magnam cupiditate atque? Inventore pariatur, facilis sint aliquam, sunt perferendis, veniam eos facere aspernatur officia repellat.
-                                </div>
-                                <div class="content__list-left-text">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur mollitia autem illum eligendi, repellat magnam cupiditate atque? Inventore pariatur, facilis sint aliquam, sunt perferendis, veniam eos facere aspernatur officia repellat.
-                                </div>
+                <?php if (!empty($postNew)) { ?>
+                    <div class="content__list">
+                        <a
+                            href="<?php echo $local ?>/<?php echo $postNew[0]['slug'] ?>.html"
+                            class="content__list-left"
+                            onclick="handleClick(event,'<?php echo $postNew[0]['slug']; ?>')">
+                            <div class="content__list-left-img">
+                                <img loading="lazy" width="100%" height="300px" src="<?php echo $local ?>/admin/uploads/<?php echo $postNew[0]['img'] ?>" alt="...">
                             </div>
-                            <div class="content__list-right-card-right">
-                                <img loading="lazy" width="100%" height="auto" src="<?php echo $local ?>/images/card/card.png" alt="...">
+                            <div class="content__list-left-title">
+                                <?php echo $postNew[0]['title'] ?>
+                            </div>
+                            <div class="content__list-left-text">
+                                <?php echo $postNew[0]['descriptions'] ?>
                             </div>
                         </a>
-                        <a href="<?php echo $local ?>" class="content__list-right-card">
-                            <div class="content__list-right-card-left">
-                                <div class="content__list-left-title">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur mollitia autem illum eligendi, repellat magnam cupiditate atque? Inventore pariatur, facilis sint aliquam, sunt perferendis, veniam eos facere aspernatur officia repellat.
-                                </div>
-                                <div class="content__list-left-text">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur mollitia autem illum eligendi, repellat magnam cupiditate atque? Inventore pariatur, facilis sint aliquam, sunt perferendis, veniam eos facere aspernatur officia repellat.
-                                </div>
-                            </div>
-                            <div class="content__list-right-card-right">
-                                <img loading="lazy" width="100%" height="auto" src="<?php echo $local ?>/images/card/card.png" alt="...">
-                            </div>
-                        </a>
+                        <div class="content__list-right">
+                            <?php if (!empty($postNew) && count($postNew) > 1) {
+                                foreach (array_slice($postNew, 1) as $post) {
+                            ?>
+                                    <a href="<?php echo $local ?>/<?php echo $post['slug'] ?>.html" class="content__list-right-card" onclick="handleClick(event,'<?php echo $post['slug']; ?>')">
+                                        <div class="content__list-right-card-left">
+                                            <div class="content__list-left-title">
+                                                <?php echo $post['title'] ?>
+                                            </div>
+                                            <div class="content__list-left-text">
+                                                <?php echo $post['descriptions'] ?>
+                                            </div>
+                                        </div>
+                                        <div class="content__list-right-card-right">
+                                            <img loading="lazy" width="100%" height="auto" src="<?php echo $local ?>/admin/uploads/<?php echo $post['img'] ?>" alt="...">
+                                        </div>
+                                    </a>
+                            <?php }
+                            } ?>
+                        </div>
                     </div>
-                </div>
+                <?php } else { ?>
+                    <div style="display: flex; align-items: center; justify-content: center; height: 300px; ">Chưa có bài viết nào</div>
+                <?php } ?>
             </div>
 
             <div id="popular" class="tab-content">
-                <div class="content__list">
-                    <a href="<?php echo $local ?>" class="content__list-left">
-                        <div class="content__list-left-img">
-                            <img loading="lazy" width="100%" height="300px" src="<?php echo $local ?>/images/card/card.png" alt="...">
-                        </div>
-                        <div class="content__list-left-title">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur mollitia autem illum eligendi, repellat magnam cupiditate atque? Inventore pariatur, facilis sint aliquam, sunt perferendis, veniam eos facere aspernatur officia repellat.
-                        </div>
-                        <div class="content__list-left-text">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur mollitia autem illum eligendi, repellat magnam cupiditate atque? Inventore pariatur, facilis sint aliquam, sunt perferendis, veniam eos facere aspernatur officia repellat.
-                        </div>
-                    </a>
-                    <div class="content__list-right">
-                        <a href="<?php echo $local ?>" class="content__list-right-card">
-                            <div class="content__list-right-card-left">
-                                <div class="content__list-left-title">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur mollitia autem illum eligendi, repellat magnam cupiditate atque? Inventore pariatur, facilis sint aliquam, sunt perferendis, veniam eos facere aspernatur officia repellat.
-                                </div>
-                                <div class="content__list-left-text">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur mollitia autem illum eligendi, repellat magnam cupiditate atque? Inventore pariatur, facilis sint aliquam, sunt perferendis, veniam eos facere aspernatur officia repellat.
-                                </div>
+                <?php if (!empty($postView)) { ?>
+                    <div class="content__list">
+                        <a
+                            href="<?php echo $local ?>/<?php echo $postView[0]['slug'] ?>.html"
+                            class="content__list-left"
+                            onclick="handleClick(event,'<?php echo $postView[0]['slug']; ?>')">
+                            <div class="content__list-left-img">
+                                <img loading="lazy" width="100%" height="300px" src="<?php echo $local ?>/admin/uploads/<?php echo $postView[0]['img'] ?>" alt="...">
                             </div>
-                            <div class="content__list-right-card-right">
-                                <img loading="lazy" width="100%" height="auto" src="<?php echo $local ?>/images/card/card.png" alt="...">
+                            <div class="content__list-left-title">
+                                <?php echo $postView[0]['title'] ?>
+                            </div>
+                            <div class="content__list-left-text">
+                                <?php echo $postView[0]['descriptions'] ?>
                             </div>
                         </a>
-
+                        <div class="content__list-right">
+                            <?php if (!empty($postView) && count($postView) > 1) {
+                                foreach (array_slice($postView, 1) as $view) {
+                            ?>
+                                    <a href="<?php echo $local ?>/<?php echo $view['slug'] ?>.html" class="content__list-right-card" onclick="handleClick(event,'<?php echo $view['slug']; ?>')">
+                                        <div class="content__list-right-card-left">
+                                            <div class="content__list-left-title">
+                                                <?php echo $view['title'] ?>
+                                            </div>
+                                            <div class="content__list-left-text">
+                                                <?php echo $view['descriptions'] ?>
+                                            </div>
+                                        </div>
+                                        <div class="content__list-right-card-right">
+                                            <img loading="lazy" width="100%" height="auto" src="<?php echo $local ?>/admin/uploads/<?php echo $view['img'] ?>" alt="...">
+                                        </div>
+                                    </a>
+                            <?php }
+                            } ?>
+                        </div>
                     </div>
-                </div>
+                <?php } else { ?>
+                    <div style="display: flex; align-items: center; justify-content: center; height: 300px; ">Chưa có bài viết nào</div>
+                <?php } ?>
+            </div>
             </div>
         </section>
         <section class="health">
@@ -260,8 +276,30 @@
             });
         });
     </script>
-    <script defer src="<?php echo $local ?>/js/carousel.min.js" ></script>
-
+    <script defer src="<?php echo $local ?>/js/carousel.min.js"></script>
+    <script>
+        function handleClick(event, slug) {
+            event.preventDefault();
+            console.log("Slug của bài viết:", slug);
+            let formData = {
+            slug: slug,
+        };
+        const xhr = new XMLHttpRequest();
+            xhr.open("POST", "<?php echo $local ?>/api/bai-viet/update-view.php", true); 
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let response = JSON.parse(xhr.responseText);
+                    
+                }
+            };
+            xhr.send(JSON.stringify(formData));
+            // Ví dụ: Xử lý thêm trước khi chuyển trang
+            setTimeout(() => {
+                window.location.href = `<?php echo $local ?>/` + slug + ".html";
+            }, 500); 
+        }
+    </script>
 
 
     <?php include_once "./inc/footer.php" ?>
