@@ -1,20 +1,18 @@
-<?php
 
-if (isset($slug)) {
-    $listQuanTam = $benh->getDSBaiVietLienQuan($slug);
-};
-
-?>
 <div class="comment">
     <div class="quantam">
         <div class="quantam__title">có thể bạn quan tâm</div>
         <img width="100%" height="auto" src="<?php echo $local ?>/images/icons/icon_line.webp" alt="line">
         <ul>
-            <?php foreach ($listQuanTam['data'] as $item) : ?>
-                <li>
-                    <a href="<?php echo $local ?>/<?php echo $item['slug'] ?>.html"><?php echo $item['tieu_de'] ?></a>
-                </li>
-            <?php endforeach ?>
+            <?php if (is_array($listQuanTam) && isset($listQuanTam['data'])) : ?>
+                <?php foreach ($listQuanTam['data'] as $item) : ?>
+                    <li>
+                        <a href="<?php echo $local ?>/<?php echo $item['slug'] ?>.html"><?php echo $item['tieu_de'] ?></a>
+                    </li>
+                <?php endforeach ?>
+            <?php else: ?>
+                <p>Không có bài viết liên quan.</p>
+            <?php endif; ?>
 
         </ul>
     </div>

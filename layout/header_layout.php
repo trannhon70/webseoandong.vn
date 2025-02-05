@@ -1,3 +1,6 @@
+<?php 
+    $getAllChiTietKhoaAndBenh = $khoas->getAllChiTietKhoaAndBenh();
+?>
 <header class="header">
     <div class="header__top">
         <a href="<?php echo $local ?>">
@@ -12,10 +15,27 @@
                         <img width="35px" height="35px" loading="lazy" src="<?php echo $local ?>/images/icons/icon_home.webp" alt="...">
                     </a>
                 </li>
-                <li class="header__bottom-container-ul-li">
+                <li class="header__bottom-container-ul-li header__bottom-container-menu">
                     <a href="<?php echo $local ?>">
-                        danh mục bệnh <img style="transform: translate(0px , -5px);" width="20px" height="25px" loading="lazy" src="<?php echo $local ?>/images/icons/icon_down.webp" alt="...">
+                        danh mục  <img style="transform: translate(0px , -5px);" width="20px" height="25px" loading="lazy" src="<?php echo $local ?>/images/icons/icon_down.webp" alt="...">
                     </a>
+                    <div class="header__menu">
+                        <div></div>
+                        <nav>
+                            <?php foreach ($getAllChiTietKhoaAndBenh as $value) : ?>
+                                <ul>
+                                    <li>
+                                        <span><?php echo $value['name']; ?></span>
+                                    </li>
+                                    <?php foreach ($value['danhSachBenh'] as $benh) : ?>
+                                        <li class="header__menu-li">
+                                            <a href="<?php echo $local ?>/danh-sach-bai-viet.php?danhmuc=<?php echo $value['slug'] ?>&chuyende=<?php echo $benh['slug'] ?>&page=1"><?php echo $benh['name']; ?></a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endforeach; ?>
+                        </nav>
+                    </div>
                 </li>
                 <li class="header__bottom-container-ul-li">
                     <a href="<?php echo $local ?>">

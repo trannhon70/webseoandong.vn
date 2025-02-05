@@ -1,6 +1,20 @@
 .header{
 
 }
+@keyframes backInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    80% {
+        opacity: 0.7;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .header__top{
     width: var(--container);
     margin: var(--margin-auto);
@@ -89,4 +103,82 @@
 
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
     background: var(--background-131A85);
+}
+
+.header__bottom-container-menu{
+    position: relative;
+}
+.header__bottom-container-menu:hover > .header__menu{
+    display: var(--display-block);
+    animation: backInDown 0.5s forwards;
+}
+
+.header__menu {
+    display: none;
+    position: absolute;
+    top: 25px;
+    left: -100px;
+    width: var(--width-100);
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.header__menu>div{
+    height: 21px;
+    width: 880px;
+}
+
+.header__menu > nav{
+    min-width: 860px;
+    display: var(--display-flex);
+    background-color:#F4FCFF;
+    padding: 10px;
+    gap: 10px;
+    border-left: 1px solid var(--color-131A85) ;
+    border-right: 1px solid var(--color-131A85) ;
+    border-bottom: 1px solid var(--color-131A85) ;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    
+}
+
+.header__menu > nav>ul {
+    list-style: none;
+    width: 25%;
+    
+}
+
+.header__menu > nav>ul > li {
+    padding: 10px 0px;
+}
+
+.header__menu > nav>ul > li > span {
+    font-size: var(--font-size-14);
+    color: var(--color-131A85);
+    font-weight: var(--font-weight-700);
+    text-transform: uppercase;
+}
+
+.header__menu-li:hover{
+    transition: all .5s;
+    background-color: var(--background-131A85);
+    color: var(--color-white);
+}
+.header__menu-li:hover > a{
+    transition: all .5s;
+    color: var(--color-white);
+}
+.header__menu-li {
+    border-bottom: 0.5px dashed #131A85
+}
+.header__menu-li > a {
+    display: block;
+    width: 100%;
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-700);
+    text-transform: capitalize;
+    color: var(--color-black);
+    
 }

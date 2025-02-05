@@ -44,12 +44,13 @@ setcookie(
     include_once 'classes/bai_viet.php';
     include_once 'classes/tin_tuc.php';
     include_once 'classes/benh.php';
+    include_once 'classes/khoa.php';
 
     spl_autoload_register(function ($className) {
         include_once "classes/" . $className . ".php";
     });
     $dbReadStarTime = hrtime(true);
-
+    $khoas = new Khoa();
     $bai_viet = new post();
     $tin_tuc = new news();
     $benh = new Benh();

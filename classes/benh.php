@@ -129,6 +129,7 @@ include_once($filepath . '/../helpers/format.php');
       {
         $query = "SELECT id_benh FROM admin_baiviet WHERE slug = '$slug' LIMIT 1 ";
         $result = $this->db->select($query);
+       
         if ($result && $result->num_rows > 0) {
           $benh = $result->fetch_assoc();
           if ($benh) {

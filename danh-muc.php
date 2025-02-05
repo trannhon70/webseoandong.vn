@@ -7,6 +7,7 @@ $slug = basename(parse_url($current_url, PHP_URL_PATH), '.html');
 $getPostDetail = null;
 
 $postDetail = $bai_viet->getBaiViet_bySlug($slug);
+$listQuanTam = $benh->getDSBaiVietLienQuan($slug);
 
 if (isset($postDetail) && isset($postDetail['name_khoa'])) {
     $getPostDetail = $postDetail;
