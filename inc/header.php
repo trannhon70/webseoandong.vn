@@ -33,7 +33,7 @@ setcookie(
     [
         "expires" => time() + 3600, // Thời gian hết hạn (1 giờ)
         "path" => "/",              // Đường dẫn
-        "domain" => "https://andongclinic.vn",  // Tên miền (tuỳ chỉnh)
+        "domain" => "https://www.vnbacsionline.com",  // Tên miền (tuỳ chỉnh)
         "secure" => true,           // Chỉ gửi qua HTTPS
         "httponly" => true,         // Chỉ gửi cookie qua HTTP (không JavaScript)
         "samesite" => "None"        // SameSite=None
@@ -61,7 +61,7 @@ setcookie(
     header('Server-Timing: db;desc="Database";dur=' . $dbReadTotalTime);
 
     $local ='http://localhost/_andong/webseoandong.vn'
-    // $local ='https://andongclinic.vn'
+    // $local ='https://www.vnbacsionline.com'
     ?>
 <!DOCTYPE html>
 <html ⚡ lang="en">

@@ -6,7 +6,7 @@ define("DB_NAME", "seo.phongkhamdakhoa");
 
 
 // define("DB_HOST", "localhost");
-// define("DB_USER", "namk_2root");
-// define("DB_PASS", "hwumbKmrwGmtd@HA");
-// define("DB_NAME", "namk_2phongkhamdakhoanhatviet");   
+// define("DB_USER", "sql_vnbacsionlin");
+// define("DB_PASS", "35a07c2450c44");
+// define("DB_NAME", "sql_vnbacsionlin");   
 ?>

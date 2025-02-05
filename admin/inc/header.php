@@ -9,7 +9,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 }
 
 $local = 'http://localhost/_andong/webseoandong.vn';
-// $local = 'https://namkhoa2.phongkhamdakhoanhatviet.vn';
+// $local = 'https://www.vnbacsionline.com';
 ?>
 
 <?php
