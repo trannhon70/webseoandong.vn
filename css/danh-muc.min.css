@@ -698,4 +698,13 @@
     .h3-custom{
         font-size: 16px !important;
     }
+
+    .comment{
+        width: 100%;
+    }
+    .quantam, .comment__body{
+        padding: 0px 10px;
+        box-sizing: border-box;
+        width: 100%;
+    }
   }

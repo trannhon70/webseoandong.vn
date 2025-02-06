@@ -131,7 +131,7 @@ setTitleAndScroll();
                     <div><?php echo $getPostDetail ?></div>
                 <?php } ?>
                 </div>
-                <!-- <?php include_once './layout/comment_layout.php' ?> -->
+                <?php include_once './layout/comment_layout.php' ?>
             </article>
         </main>
 
