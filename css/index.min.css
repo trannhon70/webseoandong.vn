@@ -67,8 +67,9 @@ body {
 }
 
 #header,
-#header__mobile
-
+#header__mobile,
+#footer__mobile,
+#footer
 {
     display: none;
 }
@@ -77,11 +78,18 @@ body {
     #header{
         display: var(--display-block);
     }
+    #footer{
+        display: var(--display-block);
+    }
     
 }
 
 @media only screen and (max-width: 999px) {
     #header__mobile {
+        display: var(--display-block);
+    }
+
+    #footer__mobile {
         display: var(--display-block);
     }
    

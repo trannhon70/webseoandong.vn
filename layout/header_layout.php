@@ -98,9 +98,9 @@ $getAllChiTietKhoaAndBenh = $khoas->getAllChiTietKhoaAndBenh();
                 <a href="<?php echo $local ?>/trang-chu.html">Trang chủ</a>
             </li>
             <li class="sidebar_mobile_li">
-                <div onclick="showShelectOption()">
+                <div>
                     <span>danh mục</span>
-                    <img src="<?php echo $local ?>/images/icons/icon_down.png" alt="">
+                    <!-- <img src="<?php echo $local ?>/images/icons/icon_down.png" alt=""> -->
                 </div>
                 <ul class="sidebar_mobile_li-option">
                     <?php foreach ($getMenuMobile as $value) : ?>
@@ -112,7 +112,7 @@ $getAllChiTietKhoaAndBenh = $khoas->getAllChiTietKhoaAndBenh();
                             <ul>
                                 <?php foreach ($value['dsBenh'] as $item) : ?>
                                     <li>
-                                        <a href="<?php echo $local ?>/danh-muc.php?khoa=<?php echo $value['slug'] ?>&benh=<?php echo $item['slug'] ?>&page=1"> <?php echo $item['name'] ?></a>
+                                        <a href="<?php echo $local ?>/danh-sach-bai-viet.php?danhmuc=<?php echo $value['slug'] ?>&chuyende=<?php echo $item['slug'] ?>&page=1"><?php echo $item['name']; ?></a>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>

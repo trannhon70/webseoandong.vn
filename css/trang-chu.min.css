@@ -323,3 +323,37 @@
     display: var(--display-flex);
 }
 
+@media only screen and (max-width: 999px) {
+    .post,
+    .health{
+        width: 100%;
+    }
+    .content__list{
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+    }
+    .content__list-left,
+    .content__list-right{
+        width: 100%;
+    }
+
+    .health__container{
+        padding: 10px;
+    }
+    .carousel-item, .carousel-item1{
+        min-height: 100px;
+    }
+
+    .carousel-container {
+        margin: 0px auto;
+    }
+
+    .post__list{
+        flex-wrap: wrap;
+    }
+    .post__list-item{
+        width: 100%;
+        border-radius: 0px;
+    }
+  }

@@ -99,10 +99,10 @@ setcookie(
                     //     href: 'css/trang_chu_mobile.min.css',
                     //     id: 'mobile-1'
                     // },
-                    // {
-                    //     href: 'css/footer_mobile.min.css',
-                    //     id: 'mobile-1'
-                    // },
+                    {
+                        href: 'css/footer_mobile.min.css',
+                        id: 'mobile-1'
+                    },
 
                 ];
                 mobileLink.forEach(({

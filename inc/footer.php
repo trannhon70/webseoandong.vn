@@ -1,6 +1,5 @@
-
-<footer class="footer">
-    <div class="footer__container" >
+<footer id="footer" class="footer">
+    <div class="footer__container">
         <div class="footer__container-title">đặt lịch tư vấn ngay</div>
         <div class="footer__container-text">Để giải đáp những thắc mắc về sức khỏe</div>
         <div class="footer__container-body">
@@ -11,7 +10,7 @@
                 <img loading="lazy" width="100%" height="auto" src="<?php echo $local ?>/images/users/bacsi.webp" alt="...">
             </div>
         </div>
-        <div class="footer__container-bottom" >
+        <div class="footer__container-bottom">
             <a href="<?php echo $local ?>">
                 <img loading="lazy" width="250px" height="auto" src="<?php echo $local ?>/images/icons/icon_dangky.webp" alt="...">
             </a>
@@ -23,11 +22,52 @@
             </a>
         </div>
     </div>
-    <div class="footer__bg" >
+    <div class="footer__bg">
 
     </div>
 </footer>
 
+<footer id="footer__mobile" class="footer__mobile">
+    <div class="footer__mobile-title">
+        Đặt lịch tư vấn ngay
+    </div>
+    <div class="footer__mobile-body">
+        <span>Để giải đáp những thắc mắc về sức khỏe</span>
+        <div class="footer__mobile-body-list">
+            <div class="footer__mobile-body-list-item">
+                <img loading="lazy" width="100%" height="auto" src="<?php echo $local ?>/images/background/camket.webp" alt="...">
+            </div>
+            <div class="footer__mobile-body-list-item">
+                <img loading="lazy" width="100%" height="auto" src="<?php echo $local ?>/images/background/tructuyen.webp" alt="...">
+            </div>
+        </div>
+        <img loading="lazy" width="100%" height="auto" src="<?php echo $local ?>/images/background/group_bacsi.webp" alt="...">
+    </div>
+    <div class="footer__mobile-bottom">
+        <div class="footer__mobile-bottom-list">
+            <div class="footer__mobile-bottom-list-item">
+                <div style="background-color: #FF7E00;" class="footer__mobile-bottom-list-item-card">
+                    <img loading="lazy" width="35px" height="35px" src="<?php echo $local ?>/images/icons/icon_book.webp" alt="...">
+                    Đăng kí khám online
+                </div>
+                <div style="background-color: #FA326A;" class="footer__mobile-bottom-list-item-card">
+                    <img loading="lazy" width="35px" height="35px" src="<?php echo $local ?>/images/icons/icon_phone.webp" alt="...">
+                    Nhận tư vấn online
+                </div>
+                <div style="background-color: #3F7AFF;" class="footer__mobile-bottom-list-item-card">
+                    <img loading="lazy" width="35px" height="35px" src="<?php echo $local ?>/images/icons/icon_zalo.webp" alt="...">
+                    chat zalo cùng bác sĩ
+                </div>
+            </div>
+            <div class="footer__mobile-bottom-list-item">
+                <img loading="lazy" width="100%" height="auto" src="<?php echo $local ?>/images/users/user_2.webp" alt="...">
+            </div>
+        </div>
+    </div>
+    <div style="background-color: #131A85; height:50px; width: 100%;" ></div>
+</footer>
+
 
 </body>
+
 </html>

@@ -8,6 +8,14 @@
     background-color: var(--background-131A85);
     padding: 10px;
     box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.header__mobile > img{
+    margin-top: 50px;
 }
 
 .header__mobile-top-center{
