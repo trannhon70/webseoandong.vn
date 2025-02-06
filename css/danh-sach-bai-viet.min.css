@@ -165,3 +165,30 @@
 .danhmuc__right-paging-number-active{
     background-color: var(--background-131A85);
 }
+
+@media only screen and (max-width: 999px) {
+    .list{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .list__container{
+        flex-wrap: wrap;
+
+    }
+    .list__container-left,
+    .list__container-right{
+        width: 100%;
+        padding: 0px 10px;
+    }
+
+    .danhmuc__right-paging-number,
+    .danhmuc__right-paging-prev{
+        width: 25px;
+        height: 25px;
+    }
+
+    .danhmuc__right-paging-prev svg{
+        width: 20px;
+        height: 20px;
+    }
+  }

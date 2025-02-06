@@ -651,3 +651,51 @@
     background-size: contain; /* Hoặc cover nếu cần */
 }
 
+@media only screen and (max-width: 999px) {
+    .category{
+        width: 100%;
+    }
+    .category__left {
+        display: none;
+    }
+
+    .category__right{
+        width: 100%;
+    }
+
+    .img-responsive {
+        width: 100% !important;
+        height: 225px !important;
+    }
+    .img-gif {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 8px !important;
+    }
+
+    #bai-viet {
+        padding: 0px 10px;
+        box-sizing: border-box;
+    }
+
+    .view {
+        text-align: center !important;
+        width: 100% !important;
+        height: 226px !important;
+    }
+    .view_button {
+        top: 72% !important;
+    }
+
+    .custom-h2-style{
+        font-size: 18px !important;
+    }
+
+    .category__right-title{
+        font-size: var(--font-size-18);
+    }
+    
+    .h3-custom{
+        font-size: 16px !important;
+    }
+  }

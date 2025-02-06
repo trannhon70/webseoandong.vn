@@ -131,7 +131,7 @@ setTitleAndScroll();
                     <div><?php echo $getPostDetail ?></div>
                 <?php } ?>
                 </div>
-                <?php include_once './layout/comment_layout.php' ?>
+                <!-- <?php include_once './layout/comment_layout.php' ?> -->
             </article>
         </main>
 
@@ -277,8 +277,7 @@ setTitleAndScroll();
             
             const loadBody = () => {
                 let content = `<?php echo htmlspecialchars_decode($getPostDetail['content']); ?>`;
-                const phoneRegex = /0968\s063\s109/g; // Regex tìm số điện thoại
-                content = content.replace(phoneRegex, '0968 063 109, 028 7777 9888'); 
+               
                 bodyPlaceholder.innerHTML = content;
                 bodyPlaceholder.classList.add("loaded");
                 observer.unobserve(bodyPlaceholder);

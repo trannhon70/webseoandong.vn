@@ -67,7 +67,60 @@
     <div style="background-color: #131A85; height:50px; width: 100%;" ></div>
 </footer>
 
+<script defer>
+     function updateHeaderScripts() {
+         // Xóa các script cũ nếu có
+         const existingMobileScripts = document.querySelectorAll('script[id^="mobile-"]');
+         const existingDesktopScripts = document.querySelectorAll('script[id^="desktop-"]');
+         existingMobileScripts.forEach(script => script.remove());
+         existingDesktopScripts.forEach(script => script.remove());
 
+         // Thêm script mới dựa trên kích thước cửa sổ
+         if (window.innerWidth < 1000) {
+             const mobileScripts = [
+                {
+                     src: 'js/checkImgMobile.min.js',
+                     id: 'mobile-0'
+                 },
+             ];
+             mobileScripts.forEach(({
+                 src,
+                 id
+             }) => {
+                 const script = document.createElement('script');
+                 script.src = src;
+                 script.id = id;
+                 script.defer = true;
+                 document.body.appendChild(script);
+             });
+         } else {
+             const desktopScripts = [
+                 // {
+                 //     src: 'js/slider.min.js',
+                 //     id: 'desktop-0'
+                 // },
+
+             ];
+             desktopScripts.forEach(({
+                 src,
+                 id
+             }) => {
+                 const script = document.createElement('script');
+                 script.src = src;
+                 script.id = id;
+                 document.body.appendChild(script);
+             });
+         }
+     }
+
+     updateHeaderScripts();
+
+     window.addEventListener('resize', () => {
+                console.log('Window resized to:', window.innerWidth);
+                updateHeaderScripts();
+              
+            });
+ </script>
 </body>
 
 </html>
