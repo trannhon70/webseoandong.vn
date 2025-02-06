@@ -55,6 +55,8 @@ setcookie(
     $tin_tuc = new news();
     $benh = new Benh();
 
+    $getMenuMobile = $benh->getMenuMobile();
+
     $dbReadEndTime = hrtime(true);
     $dbReadTotalTime = ($dbReadEndTime - $dbReadStarTime) / 1e+6;
    
@@ -89,10 +91,10 @@ setcookie(
             // Thêm stylesheet mới dựa trên kích thước cửa sổ
             if (window.innerWidth < 999) {
                 const mobileLink = [
-                    // {
-                    //     href: 'css/header_mobile.min.css',
-                    //     id: 'mobile-0'
-                    // },
+                    {
+                        href: 'css/header_mobile.min.css',
+                        id: 'mobile-0'
+                    },
                     // {
                     //     href: 'css/trang_chu_mobile.min.css',
                     //     id: 'mobile-1'
@@ -144,6 +146,11 @@ setcookie(
         }
 
         updateHeaderStylesheet();
+        window.addEventListener('resize', () => {
+                console.log('Window resized to:', window.innerWidth);
+                updateHeaderStylesheet();
+              
+            });
         
     </script>
 

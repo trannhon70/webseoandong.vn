@@ -20,7 +20,7 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
 
     <main>
         <?php include_once "./layout/header_layout.php" ?>
-        <section class="post">
+        <!-- <section class="post">
             <ul class="post__ul">
                 <li class="post__ul-li post__ul-li-active" data-tab="new">
                     <img loading="lazy" width="20px" height="20px" src="<?php echo $local ?>/images/icons/icon_new.webp" alt="..."> Bài viết mới nhất
@@ -29,7 +29,6 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                     <img loading="lazy" width="20px" height="20px" src="<?php echo $local ?>/images/icons/icon_docnhieu.webp" alt="..."> Đọc nhiều
                 </li>
             </ul>
-            <!-- Nội dung từng tab -->
             <div id="new" class="tab-content tab-content-active">
                 <?php if (!empty($postNew)) { ?>
                     <div class="content__list">
@@ -116,8 +115,8 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                 <?php } ?>
             </div>
             </div>
-        </section>
-        <section class="health">
+        </section> -->
+        <!-- <section class="health">
             <div class="health__container">
                 <div class="health__container-title">Chuyên đề sức khỏe</div>
                 <div class="carousel-container">
@@ -161,12 +160,12 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="banner__ngang">
+        </section> -->
+        <!-- <section class="banner__ngang">
             <img width="100%" height="auto" src="<?php echo $local ?>/images/banner/banner_4.webp" alt="...">
-        </section>
+        </section> -->
 
-        <section class="health">
+        <!-- <section class="health">
             <div class="health__container">
                 <div class="health__container-title">Đội ngũ chuyên gia của chúng tôi</div>
                 <div class="carousel-container">
@@ -209,8 +208,8 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="post" id="targetSection">
+        </section> -->
+        <!-- <section class="post" id="targetSection">
             <div class="post__list">
                 <div class="post__list-item">
                     <div class="post__list-item-title">sức khỏe nam giới</div>
@@ -253,7 +252,7 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                     <a href="<?php echo $local ?>?suckhoe=<?php echo $limitSuckhoe?>&dinhduong=<?php echo $limitdinhDuong  + 5 ?>#targetSection" class="button" >Xem thêm >></a>
                 </div>
             </div>
-        </section>
+        </section> -->
 
     </main>
 
@@ -304,4 +303,4 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
     </script>
 
 
-    <?php include_once "./inc/footer.php" ?>
+    <!-- <?php include_once "./inc/footer.php" ?> -->

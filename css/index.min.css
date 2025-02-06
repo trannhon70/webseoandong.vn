@@ -45,6 +45,7 @@
 
     /* flex */
     --display-flex: flex;
+    --display-block: block;
     --center: center;
     
     /* position */
@@ -65,4 +66,23 @@ body {
     max-width: var(--max-width);
 }
 
+#header,
+#header__mobile
 
+{
+    display: none;
+}
+
+@media only screen and (min-width: 1000px) {
+    #header{
+        display: var(--display-block);
+    }
+    
+}
+
+@media only screen and (max-width: 999px) {
+    #header__mobile {
+        display: var(--display-block);
+    }
+   
+  }

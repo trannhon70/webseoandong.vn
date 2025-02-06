@@ -151,6 +151,32 @@ include_once($filepath . '/../helpers/format.php');
         }
       }
 
+      public function getMenuMobile() {
+        $queryKhoa = "SELECT * FROM `admin_khoa` WHERE `id` BETWEEN 1 AND 4";
+        $resultKhoa = $this->db->select($queryKhoa);
+        $data = [];
+        if ($resultKhoa) {
+            while ($row = $resultKhoa->fetch_assoc()) {
+                $idKhoa = $row['id'];
+                
+                $query = "SELECT * FROM `admin_benh` WHERE `id_khoa` = '$idKhoa'";
+                $result = $this->db->select($query);
+    
+                $dsBenh = [];
+                if ($result) {
+                    while ($benhRow = $result->fetch_assoc()) {
+                        $dsBenh[] = $benhRow;
+                    }
+                }
+    
+                $row['dsBenh'] = $dsBenh;
+                $data[] = $row;
+            }
+        }
+    
+        return $data;
+    }
+
   }
   
 ?>
