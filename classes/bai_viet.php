@@ -300,7 +300,7 @@ class post
     if($resultBenh){
       $benh = $resultBenh->fetch_assoc();
       $id = $benh['id'];
-      $query = "SELECT baiviet.id, baiviet.title, baiviet.slug, baiviet.tieu_de, baiviet.id_benh,baiviet.id_khoa, baiviet.content, ,baiviet.img,baiviet.descriptions,baiviet.keyword,
+      $query = "SELECT baiviet.id, baiviet.title, baiviet.slug, baiviet.tieu_de, baiviet.id_benh,baiviet.id_khoa, baiviet.content ,baiviet.img,baiviet.descriptions,baiviet.keyword,
       benh.name AS name_benh, 
       benh.id_khoa AS id_khoa, 
       khoa.name AS name_khoa 

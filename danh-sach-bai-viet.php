@@ -1,7 +1,7 @@
 <?php include_once "inc/header.php" ?>
 <meta name="description"
-    content="Phòng khám đa khoa chuyên điều trị bệnh nam khoa, bệnh xã hội, da liễu, hậu môn - trực tràng uy tính tại thành phố Hồ Chí Minh">
-<title>Phòng khám đa khoa</title>
+    content="">
+<title>vnbacsionline.com</title>
 <link rel="stylesheet" href="css/danh-sach-bai-viet.min.css">
 </head>
 <?php
@@ -53,7 +53,7 @@ $total_pages = ceil($total_articles / $limit);
                         <div class="list__container-right-title"><?php echo $value['name'] ?> </div>
                         <div class="list__container-right-list">
                             <?php foreach ($value['danhSachBaiViet'] as $item): ?>
-                                <a class="list__container-right-list-card" href="<?php echo $local ?>/<?php echo $item['slug'] ?>.html">
+                                <a onclick="handleClick(event,'<?php echo $item['slug']; ?>')" class="list__container-right-list-card" href="<?php echo $local ?>/<?php echo $item['slug'] ?>.html">
                                     <div class="list__container-right-list-card-left">
                                         <h5><?php echo $item['tieu_de'] ?></h5>
                                         <span> <?php echo $item['descriptions'] ?></span>
@@ -114,4 +114,27 @@ $total_pages = ceil($total_articles / $limit);
                 </div>
             </div>
         </section>
+        <script defer >
+        function handleClick(event, slug) {
+            event.preventDefault();
+            // console.log("Slug của bài viết:", slug);
+            let formData = {
+                slug: slug,
+            };
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "<?php echo $local ?>/api/bai-viet/update-view.php", true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let response = JSON.parse(xhr.responseText);
+
+                }
+            };
+            xhr.send(JSON.stringify(formData));
+            // Ví dụ: Xử lý thêm trước khi chuyển trang
+            setTimeout(() => {
+                window.location.href = `<?php echo $local ?>/` + slug + ".html";
+            }, 500);
+        }
+    </script>
         <?php include_once "./inc/footer.php" ?>
