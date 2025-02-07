@@ -639,6 +639,17 @@
     box-sizing: border-box;
 }
 
+.body-placeholder,
+.footer__mobile {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.body-placeholder.loaded ,
+.footer__mobile.loaded{
+  opacity: 1;
+}
+
 .custom-h2-style::after {
     content: "";
     position: absolute;
