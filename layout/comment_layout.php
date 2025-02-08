@@ -53,9 +53,9 @@
                     <ul class="comment__body-ul-li-replay-ul">
                         <li class="comment__body-ul-li-replay-ul-li">
                             <div class="comment__body-ul-li-replay-ul-li-body">
-                                <img width="60px" height="60px" src="<?php echo $local ?>/images/icons/icon_logo.webp" alt="...">
+                                <img width="60px" height="60px" src="<?php echo $local ?>/images/icons/icon_logocm.jpg" alt="...">
                                 <div>
-                                    <strong>Phòng Khám Đa Khoa An Đông</strong>
+                                    <strong>vnbacsionline.com</strong>
                                     <p>Chào bạn! Cảm ơn bạn đã quan tâm đến phòng khám. Phòng khám làm việc từ 8g-20g kể cả ngày Lễ, Tết nên tan làm bạn vẫn có thể ghé thăm khám nhé! Bạn check tin nhắn để trao đổi và đặt lịch hẹn chi tiết nhé!</p>
                                 </div>
                             </div>
@@ -99,18 +99,18 @@
                     <ul class="comment__body-ul-li-replay-ul">
                         <li class="comment__body-ul-li-replay-ul-li">
                             <div class="comment__body-ul-li-replay-ul-li-body">
-                                <img width="60px" height="60px" src="<?php echo $local ?>/images/icons/icon_logo.webp" alt="...">
+                                <img width="60px" height="60px" src="<?php echo $local ?>/images/icons/icon_logocm.jpg" alt="...">
                                 <div>
-                                    <strong>Phòng Khám Đa Khoa An Đông</strong>
+                                    <strong>vnbacsionline.com</strong>
                                     <p>Vâng, chào bạn! Cảm ơn bạn đã quan tâm. Theo như tình trạng bạn đã miêu tả thì có thể bạn đã bị viêm bao quy đầu. Nhưng bạn cần thăm khám trực tiếp kĩ lưỡng hơn để bác sĩ có kết luận chính xác.</p>
                                 </div>
                             </div>
                         </li>
                         <li class="comment__body-ul-li-replay-ul-li">
                             <div class="comment__body-ul-li-replay-ul-li-body">
-                                <img width="60px" height="60px" src="<?php echo $local ?>/images/icons/icon_logo.webp" alt="...">
+                                <img width="60px" height="60px" src="<?php echo $local ?>/images/icons/icon_logocm.jpg" alt="...">
                                 <div>
-                                    <strong>Phòng Khám Đa Khoa An Đông</strong>
+                                    <strong>vnbacsionline.com</strong>
                                     <p>Bạn kiểm tra tin nhắn nhé, bên mình sẽ tư vấn cụ thể hơn.</p>
                                 </div>
                             </div>
