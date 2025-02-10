@@ -3,4 +3,9 @@ RewriteEngine On
 # Rewrite for trang-chu.html
 RewriteRule ^trang-chu\.html$ index.php [L]
 
+# Bỏ qua file xác minh của Google
+<FilesMatch "google395a10a4eab7f77c\.html">
+    RewriteEngine Off
+</FilesMatch>
+
 RewriteRule ^([a-zA-Z0-9_-]+)\.html$ danh-muc.php?tintuc=$1 [L]
