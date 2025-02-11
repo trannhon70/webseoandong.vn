@@ -376,6 +376,19 @@ class post
       return $row['total'];
     }
   }
+
+  public function getAllDSBaiViet()
+  {
+    $query = "SELECT id, slug, created_at FROM admin_baiviet ORDER BY created_at DESC";
+      $result = $this->db->select($query);
+      $data = [];
+      if ($result) {
+          while ($row = $result->fetch_assoc()) {
+              $data[] = $row;
+          }
+      }
+      return $data;
+  }
 }
 
 ?>
