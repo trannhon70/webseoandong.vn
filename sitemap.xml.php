@@ -25,10 +25,13 @@ $data = $bai_viet->getAllDSBaiViet();
 ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <?php if(!empty($data)) { 
-        foreach ($data as $post) { ?>
+        foreach ($data as $post) { 
+            $lastmod = date(DATE_W3C, strtotime($post['created_at']));
+        ?>
+        
     <url>
         <loc>https://www.vnbacsionline.com/<?php echo $post['slug'] ?>.html</loc>
-        <lastmod><?php echo $post['created_at'] ?></lastmod>
+        <lastmod><?php echo $lastmod ?></lastmod>
     </url>
   <?php } }?>
 
