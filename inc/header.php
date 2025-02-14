@@ -62,13 +62,15 @@ setcookie(
    
     header('Server-Timing: db;desc="Database";dur=' . $dbReadTotalTime);
 
-    $local ='http://localhost/_andong/webseoandong.vn'
-    // $local ='https://www.vnbacsionline.com'
+    // $local ='http://localhost/_andong/webseoandong.vn'
+    $local ='https://www.vnbacsionline.com'
     ?>
 <!DOCTYPE html>
 <html ⚡ lang="en">
 
 <head>
+    <title>VNBACSIONLINE - Chăm Sóc Sức Khỏe Y Tế</title>
+    <meta name='description' content='VNBACSIONLINE - Trang cung cấp thông tin y học, cập nhật những kiến thức y học chuẩn xác và đáng tin cậy. Với đội ngũ chuyên gia giàu kinh nghiệm, chúng tôi mong muốn mang lại những nguồn thông tin hữu ích đến với người đọc về các chủ đề bệnh lý đa dạng về Nam Khoa, Bệnh Xã Hội, Sản Phụ Khoa, Da Liễu, Bệnh Trĩ,...'>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="google-site-verification" content="BcfKZyCch1ub8p7xuoJRoiY8YIxrqDIWOoSGCC-xZdc" />
