@@ -7,7 +7,7 @@ ob_start("ob_gzhandler");
 header("Timing-Allow-Origin: *");
 header("Cache-Control: public, max-age=31536000, must-revalidate");
 // Danh sách IP bị chặn
-$blocked_ips = ['115.78.128.131'];
+$blocked_ips = [''];
 
 function getClientIp() {
     if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
@@ -40,7 +40,6 @@ setcookie(
     ]
 );
 
-
     include_once 'classes/bai_viet.php';
     include_once 'classes/tin_tuc.php';
     include_once 'classes/benh.php';
@@ -62,8 +61,8 @@ setcookie(
    
     header('Server-Timing: db;desc="Database";dur=' . $dbReadTotalTime);
 
-    // $local ='http://localhost/_andong/webseoandong.vn'
-    $local ='https://www.vnbacsionline.com'
+    $local ='http://localhost/_andong/webseoandong.vn'
+    // $local ='https://www.vnbacsionline.com'
     ?>
 <!DOCTYPE html>
 <html ⚡ lang="en">
@@ -80,8 +79,10 @@ setcookie(
     <link rel="preload" href="css/index.min.css" as="style" onload='this.onload=null,this.rel="stylesheet"'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+
     <noscript>
         <link rel="stylesheet" href="css/index.min.css">
     </noscript>
