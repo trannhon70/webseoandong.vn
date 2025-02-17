@@ -191,9 +191,6 @@
     right: 10px;
 }
 
-.carousel-track.no-transition {
-    transition: none !important;
-}
 
 .health__container hr {
     border: 2px solid #739dff;
