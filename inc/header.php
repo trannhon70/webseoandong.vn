@@ -64,6 +64,10 @@ setcookie(
     $local ='http://localhost/_andong/webseoandong.vn'
     // $local ='https://www.vnbacsionline.com'
     ?>
+
+<?php
+    $indexCss = file_get_contents('css/index.min.css'); // Đọc nội dung file CSS
+?>
 <!DOCTYPE html>
 <html ⚡ lang="en">
 
@@ -77,11 +81,12 @@ setcookie(
     <link rel="canonical" href="https://www.vnbacsionline.com<?php echo $_SERVER['REQUEST_URI']; ?>" />
 
     <!-- <link rel="icon" href="<?php echo $local ?>/images/icons/icon_logo.webp" type="image/x-icon"> -->
-    <link rel="stylesheet" href="css/index.min.css">
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-   
+    <style amp-custom>
+        <?=$indexCss ?>
+    </style>
     <script>
     function updateHeaderStylesheet() {
         // Xóa các stylesheet cũ nếu có
