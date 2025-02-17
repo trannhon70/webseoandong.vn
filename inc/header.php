@@ -69,98 +69,86 @@ setcookie(
 
 <head>
     <title>VNBACSIONLINE - Chăm Sóc Sức Khỏe Y Tế</title>
-    <meta name='description' content='VNBACSIONLINE - Trang cung cấp thông tin y học, cập nhật những kiến thức y học chuẩn xác và đáng tin cậy. Với đội ngũ chuyên gia giàu kinh nghiệm, chúng tôi mong muốn mang lại những nguồn thông tin hữu ích đến với người đọc về các chủ đề bệnh lý đa dạng về Nam Khoa, Bệnh Xã Hội, Sản Phụ Khoa, Da Liễu, Bệnh Trĩ,...'>
+    <meta name='description'
+        content='VNBACSIONLINE - Trang cung cấp thông tin y học, cập nhật những kiến thức y học chuẩn xác và đáng tin cậy. Với đội ngũ chuyên gia giàu kinh nghiệm, chúng tôi mong muốn mang lại những nguồn thông tin hữu ích đến với người đọc về các chủ đề bệnh lý đa dạng về Nam Khoa, Bệnh Xã Hội, Sản Phụ Khoa, Da Liễu, Bệnh Trĩ,...'>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="google-site-verification" content="BcfKZyCch1ub8p7xuoJRoiY8YIxrqDIWOoSGCC-xZdc" />
     <link rel="canonical" href="https://www.vnbacsionline.com<?php echo $_SERVER['REQUEST_URI']; ?>" />
 
     <!-- <link rel="icon" href="<?php echo $local ?>/images/icons/icon_logo.webp" type="image/x-icon"> -->
-    <link rel="preload" href="css/index.min.css" as="style" onload='this.onload=null,this.rel="stylesheet"'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    
+    <link rel="stylesheet" href="css/index.min.css">
+
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-
-    <noscript>
-        <link rel="stylesheet" href="css/index.min.css">
-    </noscript>
+   
     <script>
-        function updateHeaderStylesheet() {
-            // Xóa các stylesheet cũ nếu có
-            const existingMobile = document.querySelectorAll('link[id^="mobile-"]');
-            const existingDesktop = document.querySelectorAll('link[id^="desktop-"]');
-            existingMobile.forEach(mobile => mobile.remove());
-            existingDesktop.forEach(desktop => desktop.remove());
+    function updateHeaderStylesheet() {
+        // Xóa các stylesheet cũ nếu có
+        const existingMobile = document.querySelectorAll('link[id^="mobile-"]');
+        const existingDesktop = document.querySelectorAll('link[id^="desktop-"]');
+        existingMobile.forEach(mobile => mobile.remove());
+        existingDesktop.forEach(desktop => desktop.remove());
 
-            // Thêm stylesheet mới dựa trên kích thước cửa sổ
-            if (window.innerWidth < 999) {
-                const mobileLink = [
-                    {
-                        href: 'css/header_mobile.min.css',
-                        id: 'mobile-0'
-                    },
-                    // {
-                    //     href: 'css/trang_chu_mobile.min.css',
-                    //     id: 'mobile-1'
-                    // },
-                    {
-                        href: 'css/footer_mobile.min.css',
-                        id: 'mobile-1'
-                    },
+        // Thêm stylesheet mới dựa trên kích thước cửa sổ
+        if (window.innerWidth < 999) {
+            const mobileLink = [{
+                    href: 'css/header_mobile.min.css',
+                    id: 'mobile-0'
+                },
+                // {
+                //     href: 'css/trang_chu_mobile.min.css',
+                //     id: 'mobile-1'
+                // },
+                {
+                    href: 'css/footer_mobile.min.css',
+                    id: 'mobile-1'
+                },
 
-                ];
-                mobileLink.forEach(({
-                    href,
-                    id
-                }) => {
-                    const link = document.createElement('link');
-                    link.rel = 'preload';
-                    link.href = href;
-                    link.id = id;
-                    link.as = 'style';
-                    link.onload = function () {
-                        this.rel = 'stylesheet'; // Khi preload xong, đổi sang stylesheet
-                    };
-                    document.head.appendChild(link);
-                });
-
-            } else {
-                const desktopLink = [
-                    {
-                        href: 'css/header.min.css',
-                        id: 'desktop-0'
-                    },
-                    {
-                        href: 'css/footer.min.css',
-                        id: 'desktop-1'
-                    },
-
-                ];
-                desktopLink.forEach(({
-                    href,
-                    id
-                }) => {
-                    const link = document.createElement('link');
-                    link.rel = 'stylesheet';
-                    link.href = href;
-                    link.id = id;
-                    document.head.appendChild(link);
-                });
-            }
-        }
-
-        updateHeaderStylesheet();
-        window.addEventListener('resize', () => {
-                console.log('Window resized to:', window.innerWidth);
-                updateHeaderStylesheet();
-              
+            ];
+            mobileLink.forEach(({
+                href,
+                id
+            }) => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.href = href;
+                link.id = id;
+                link.as = 'style';
+                link.onload = function() {
+                    this.rel = 'stylesheet'; // Khi preload xong, đổi sang stylesheet
+                };
+                document.head.appendChild(link);
             });
-        
+
+        } else {
+            const desktopLink = [{
+                    href: 'css/header.min.css',
+                    id: 'desktop-0'
+                },
+                {
+                    href: 'css/footer.min.css',
+                    id: 'desktop-1'
+                },
+
+            ];
+            desktopLink.forEach(({
+                href,
+                id
+            }) => {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = href;
+                link.id = id;
+                document.head.appendChild(link);
+            });
+        }
+    }
+
+    updateHeaderStylesheet();
+    window.addEventListener('resize', () => {
+        console.log('Window resized to:', window.innerWidth);
+        updateHeaderStylesheet();
+
+    });
     </script>
-
-
-
-
-

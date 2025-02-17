@@ -65,12 +65,12 @@ $getAllChiTietKhoaAndBenh = $khoas->getAllChiTietKhoaAndBenh();
         </div>
     </div>
     <div class="header__carousel">
-        <amp-carousel width="300" height="100" layout="responsive" type="slides" autoplay delay="3000" >
-            <amp-img src="<?php echo $local ?>/images/banner/banner_1.webp" width="100%" height="auto"
+        <amp-carousel width="300" height="100" layout="responsive" type="slides" autoplay delay="5000" loop>
+            <amp-img src="<?php echo $local ?>/images/banner/banner_1.webp" width="100" height="100"
                 layout="responsive"></amp-img>
-            <amp-img src="<?php echo $local ?>/images/banner/banner_2.webp" width="100%" height="auto"
+            <amp-img src="<?php echo $local ?>/images/banner/banner_2.webp" width="100" height="100"
                 layout="responsive"></amp-img>
-            <amp-img src="<?php echo $local ?>/images/banner/banner_3.webp" width="100%" height="auto"
+            <amp-img src="<?php echo $local ?>/images/banner/banner_3.webp" width="100" height="100"
                 layout="responsive"></amp-img>
         </amp-carousel>
     </div>
