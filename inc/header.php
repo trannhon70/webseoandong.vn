@@ -84,9 +84,7 @@ setcookie(
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-    <style amp-custom>
-        <?=$indexCss ?>
-    </style>
+    
     <script>
     function updateHeaderStylesheet() {
         // Xóa các stylesheet cũ nếu có

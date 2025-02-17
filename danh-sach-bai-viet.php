@@ -1,8 +1,11 @@
 <?php include_once "inc/header.php" ?>
-<meta name="description"
-    content="">
-<title>vnbacsionline.com</title>
-<link rel="stylesheet" href="css/danh-sach-bai-viet.min.css">
+<?php
+    $DSBaiViet = file_get_contents('css/danh-sach-bai-viet.min.css'); // Đọc nội dung file CSS
+?>
+<style amp-custom>
+    <?=$DSBaiViet ?>
+    <?=$indexCss ?>
+</style>  
 </head>
 <?php
 $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";

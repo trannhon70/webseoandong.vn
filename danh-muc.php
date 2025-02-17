@@ -1,5 +1,12 @@
 <?php include_once "inc/header.php" ?>
 <?php
+    $DanhmucCss = file_get_contents('css/danh-muc.min.css'); // Đọc nội dung file CSS
+?>
+<style amp-custom>
+    <?=$DanhmucCss ?>
+    <?=$indexCss ?>
+</style>  
+<?php
 $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
 $current_url .= $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $slug = basename(parse_url($current_url, PHP_URL_PATH), '.html');
@@ -51,7 +58,7 @@ function setTitleAndScroll()
 setTitleAndScroll();
 ?>
 
-<link rel="stylesheet" href="css/danh-muc.min.css">
+
 </head>
 <body>
 

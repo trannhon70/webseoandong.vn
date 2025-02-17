@@ -4,6 +4,7 @@
 ?>
 <style amp-custom>
     <?=$trangChu ?>
+    <?=$indexCss ?>
 </style>    
 </head>
 <?php
