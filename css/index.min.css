@@ -2,7 +2,7 @@
     font-family: "Roboto", sans-serif;
     margin: 0;
     padding: 0;
-    text-decoration: none !important;
+    text-decoration: none ;
 }
 :root {
     --max-width: 1920px;
