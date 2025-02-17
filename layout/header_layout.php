@@ -90,9 +90,9 @@ $getAllChiTietKhoaAndBenh = $khoas->getAllChiTietKhoaAndBenh();
             </a>
         </div>
         <div>
-            <img onclick="showSidebar()" class="header__mobile-top-left-icon" width="25px" height="25px" loading="lazy"
+            <img class="header__mobile-top-left-icon" width="25px" height="25px" loading="lazy"
                 src="<?php echo $local ?>/images/icons/icon_menu.webp" alt="...">
-            <img onclick="hidenSidebar()" class="header__mobile-top-left-icon-close" width="25px" height="25px"
+            <img  class="header__mobile-top-left-icon-close" width="25px" height="25px"
                 loading="lazy" src="<?php echo $local ?>/images/icons/icon_close.webp" alt="...">
         </div>
     </div>
@@ -198,6 +198,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const optionId = div.getAttribute('data-option');
             showOption(optionId);
         });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Lấy các phần tử
+    const menuIcon = document.querySelector('.header__mobile-top-left-icon');
+    const closeIcon = document.querySelector('.header__mobile-top-left-icon-close');
+
+    // Gán sự kiện cho phần tử Menu Icon
+    menuIcon.addEventListener('click', function () {
+        showSidebar();  // Chức năng mở sidebar
+    });
+
+    // Gán sự kiện cho phần tử Close Icon
+    closeIcon.addEventListener('click', function () {
+        hidenSidebar();  // Chức năng đóng sidebar
     });
 });
 </script>
