@@ -3,9 +3,8 @@
     $trangChu = file_get_contents('css/trang-chu.min.css'); // Đọc nội dung file CSS
 ?>
 <style amp-custom>
-    <?=$trangChu ?>
-    <?=$indexCss ?>
-</style>    
+<?=$trangChu ?><?=$indexCss ?>
+</style>
 </head>
 <?php
 $limit = 5;
@@ -37,38 +36,41 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
             <div id="new" class="tab-content tab-content-active">
                 <?php if (!empty($postNew)) { ?>
                 <div class="content__list">
-                    <a href="<?php echo $local ?>/<?php echo $postNew[0]['slug'] ?>.html" class="content__list-left"
-                        onclick="handleClick(event,'<?php echo $postNew[0]['slug']; ?>')">
-                        <div class="content__list-left-img">
-                            <img loading="lazy" width="100%" height="300px"
-                                src="<?php echo $local ?>/admin/uploads/<?php echo $postNew[0]['img'] ?>" alt="...">
+                    <amp-script class="content__list-left" layout="container" script="custom-script">
+                        <div class="post-item" data-slug="<?php echo $postNew[0]['slug']; ?>">
+                            <div class="content__list-left-img">
+                                <img loading="lazy" width="100%" height="300px"
+                                    src="<?php echo $local ?>/admin/uploads/<?php echo $postNew[0]['img'] ?>" alt="...">
+                            </div>
+                            <div class="content__list-left-title">
+                                <?php echo $postNew[0]['title'] ?>
+                            </div>
+                            <div class="content__list-left-text">
+                                <?php echo $postNew[0]['descriptions'] ?>
+                            </div>
                         </div>
-                        <div class="content__list-left-title">
-                            <?php echo $postNew[0]['title'] ?>
-                        </div>
-                        <div class="content__list-left-text">
-                            <?php echo $postNew[0]['descriptions'] ?>
-                        </div>
-                    </a>
+                    </amp-script>
                     <div class="content__list-right">
                         <?php if (!empty($postNew) && count($postNew) > 1) {
                                 foreach (array_slice($postNew, 1) as $post) {
                             ?>
-                        <a href="<?php echo $local ?>/<?php echo $post['slug'] ?>.html" class="content__list-right-card"
-                            onclick="handleClick(event,'<?php echo $post['slug']; ?>')">
-                            <div class="content__list-right-card-left">
-                                <div class="content__list-left-title">
-                                    <?php echo $post['title'] ?>
+                        <amp-script layout="container" script="custom-script">
+                            <div class="post-item content__list-right-card"
+                                data-slug="<?php echo $postNew[0]['slug']; ?>">
+                                <div class="content__list-right-card-left">
+                                    <div class="content__list-left-title">
+                                        <?php echo $post['title'] ?>
+                                    </div>
+                                    <div class="content__list-left-text">
+                                        <?php echo $post['descriptions'] ?>
+                                    </div>
                                 </div>
-                                <div class="content__list-left-text">
-                                    <?php echo $post['descriptions'] ?>
+                                <div class="content__list-right-card-right">
+                                    <img loading="lazy" width="100%" height="auto"
+                                        src="<?php echo $local ?>/admin/uploads/<?php echo $post['img'] ?>" alt="...">
                                 </div>
                             </div>
-                            <div class="content__list-right-card-right">
-                                <img loading="lazy" width="100%" height="auto"
-                                    src="<?php echo $local ?>/admin/uploads/<?php echo $post['img'] ?>" alt="...">
-                            </div>
-                        </a>
+                        </amp-script>
                         <?php }
                             } ?>
                     </div>
@@ -82,38 +84,42 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
             <div id="popular" class="tab-content">
                 <?php if (!empty($postView)) { ?>
                 <div class="content__list">
-                    <a href="<?php echo $local ?>/<?php echo $postView[0]['slug'] ?>.html" class="content__list-left"
-                        onclick="handleClick(event,'<?php echo $postView[0]['slug']; ?>')">
-                        <div class="content__list-left-img">
-                            <img loading="lazy" width="100%" height="300px"
-                                src="<?php echo $local ?>/admin/uploads/<?php echo $postView[0]['img'] ?>" alt="...">
+                    <amp-script class="content__list-left" layout="container" script="custom-script">
+                        <div class="post-item" data-slug="<?php echo $postView[0]['slug']; ?>">
+                            <div class="content__list-left-img">
+                                <img loading="lazy" width="100%" height="300px"
+                                    src="<?php echo $local ?>/admin/uploads/<?php echo $postView[0]['img'] ?>"
+                                    alt="...">
+                            </div>
+                            <div class="content__list-left-title">
+                                <?php echo $postView[0]['title'] ?>
+                            </div>
+                            <div class="content__list-left-text">
+                                <?php echo $postView[0]['descriptions'] ?>
+                            </div>
                         </div>
-                        <div class="content__list-left-title">
-                            <?php echo $postView[0]['title'] ?>
-                        </div>
-                        <div class="content__list-left-text">
-                            <?php echo $postView[0]['descriptions'] ?>
-                        </div>
-                    </a>
+                    </amp-script>
                     <div class="content__list-right">
                         <?php if (!empty($postView) && count($postView) > 1) {
                                 foreach (array_slice($postView, 1) as $view) {
                             ?>
-                        <a href="<?php echo $local ?>/<?php echo $view['slug'] ?>.html" class="content__list-right-card"
-                            onclick="handleClick(event,'<?php echo $view['slug']; ?>')">
-                            <div class="content__list-right-card-left">
-                                <div class="content__list-left-title">
-                                    <?php echo $view['title'] ?>
+                        <amp-script layout="container" script="custom-script">
+                            <div class="post-item content__list-right-card"
+                                data-slug="<?php echo $postView[0]['slug']; ?>">
+                                <div class="content__list-right-card-left">
+                                    <div class="content__list-left-title">
+                                        <?php echo $view['title'] ?>
+                                    </div>
+                                    <div class="content__list-left-text">
+                                        <?php echo $view['descriptions'] ?>
+                                    </div>
                                 </div>
-                                <div class="content__list-left-text">
-                                    <?php echo $view['descriptions'] ?>
+                                <div class="content__list-right-card-right">
+                                    <img loading="lazy" width="100%" height="auto"
+                                        src="<?php echo $local ?>/admin/uploads/<?php echo $view['img'] ?>" alt="...">
                                 </div>
                             </div>
-                            <div class="content__list-right-card-right">
-                                <img loading="lazy" width="100%" height="auto"
-                                    src="<?php echo $local ?>/admin/uploads/<?php echo $view['img'] ?>" alt="...">
-                            </div>
-                        </a>
+                        </amp-script>
                         <?php }
                             } ?>
                     </div>
@@ -227,8 +233,8 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                     <?php if (!empty($postSuckhoe)) {
                         foreach ($postSuckhoe as $post) {
                     ?>
-                    <a href="<?php echo $local ?>/<?php echo $post['slug'] ?>" class="post__list-item-card"
-                        onclick="handleClick(event,'<?php echo $post['slug']; ?>')">
+                    <amp-script  layout="container" script="custom-script">
+                    <div data-slug="<?php echo $post['slug']; ?>" class="post-item post__list-item-card">
                         <div class="post__list-item-card-left">
                             <h5><?php echo $post['title'] ?></h5>
                             <span><?php echo $post['descriptions'] ?></span>
@@ -237,7 +243,8 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                             <img width="100%" height="auto" loading="lazy"
                                 src="<?php echo $local ?>/admin/uploads/<?php echo $post['img'] ?>" alt="...">
                         </div>
-                    </a>
+                    </div>
+                    </amp-script>
                     <?php }
                     } else { ?>
                     <div style="display: flex; align-items: center; justify-content: center; height: 300px; ">Chưa có
@@ -251,8 +258,8 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                     <?php if (!empty($postdinhDuong)) {
                         foreach ($postdinhDuong as $post) {
                     ?>
-                    <a href="<?php echo $local ?>/<?php echo $post['slug'] ?>" class="post__list-item-card"
-                        onclick="handleClick(event,'<?php echo $post['slug']; ?>')">
+                   <amp-script  layout="container" script="custom-script">
+                    <div data-slug="<?php echo $post['slug']; ?>" class="post-item post__list-item-card">
                         <div class="post__list-item-card-left">
                             <h5><?php echo $post['title'] ?></h5>
                             <span><?php echo $post['descriptions'] ?></span>
@@ -261,7 +268,8 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                             <img width="100%" height="auto" loading="lazy"
                                 src="<?php echo $local ?>/admin/uploads/<?php echo $post['img'] ?>" alt="...">
                         </div>
-                    </a>
+                    </div>
+                    </amp-script>
                     <?php }
                     } else { ?>
                     <div style="display: flex; align-items: center; justify-content: center; height: 300px; ">Chưa có
@@ -292,7 +300,7 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                 // Hiển thị nội dung tab tương ứng
                 const tabId = this.getAttribute("data-tab");
                 document.getElementById(tabId).classList.add(
-                "tab-content-active"); // Sửa lỗi ở đây
+                    "tab-content-active"); // Sửa lỗi ở đây
             });
         });
     });
@@ -320,6 +328,17 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
             window.location.href = `<?php echo $local ?>/` + slug + ".html";
         }, 500);
     }
+    </script>
+    <script id="custom-script" type="text/javascript" target="amp-script">
+    (function() {
+        document.querySelectorAll(".post-item").forEach(function(item) {
+            item.addEventListener("click", function(event) {
+                let slug = event.currentTarget.getAttribute("data-slug");
+                console.log("Slug:", slug);
+                handleClick(event, slug)
+            });
+        });
+    })();
     </script>
 
 

@@ -78,12 +78,15 @@ setcookie(
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="google-site-verification" content="BcfKZyCch1ub8p7xuoJRoiY8YIxrqDIWOoSGCC-xZdc" />
+    <meta name="amp-script-src" content="sha384-1vNzwRfDkPJUDM7qB4z4jDKb6e98tjy8j-VcmKvImJOFkhBKPkIuWmTprT32Yhhy">
     <link rel="canonical" href="https://www.vnbacsionline.com<?php echo $_SERVER['REQUEST_URI']; ?>" />
 
     <link rel="icon" href="<?php echo $local ?>/images/icons/icon_logocm.jpg" type="image/x-icon">
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+
     
     <script async>
     function updateHeaderStylesheet() {
