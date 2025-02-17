@@ -61,8 +61,8 @@ setcookie(
    
     header('Server-Timing: db;desc="Database";dur=' . $dbReadTotalTime);
 
-    $local ='http://localhost/_andong/webseoandong.vn'
-    // $local ='https://www.vnbacsionline.com'
+    // $local ='http://localhost/_andong/webseoandong.vn'
+    $local ='https://www.vnbacsionline.com'
     ?>
 
 <?php
@@ -112,73 +112,5 @@ setcookie(
     </style>
 </noscript>
     
-    <script async>
-    function updateHeaderStylesheet() {
-        // Xóa các stylesheet cũ nếu có
-        const existingMobile = document.querySelectorAll('link[id^="mobile-"]');
-        const existingDesktop = document.querySelectorAll('link[id^="desktop-"]');
-        existingMobile.forEach(mobile => mobile.remove());
-        existingDesktop.forEach(desktop => desktop.remove());
-
-        // Thêm stylesheet mới dựa trên kích thước cửa sổ
-        if (window.innerWidth < 999) {
-            const mobileLink = [{
-                    href: 'css/header_mobile.min.css',
-                    id: 'mobile-0'
-                },
-                // {
-                //     href: 'css/trang_chu_mobile.min.css',
-                //     id: 'mobile-1'
-                // },
-                {
-                    href: 'css/footer_mobile.min.css',
-                    id: 'mobile-1'
-                },
-
-            ];
-            mobileLink.forEach(({
-                href,
-                id
-            }) => {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.href = href;
-                link.id = id;
-                link.as = 'style';
-                link.onload = function() {
-                    this.rel = 'stylesheet'; // Khi preload xong, đổi sang stylesheet
-                };
-                document.head.appendChild(link);
-            });
-
-        } else {
-            const desktopLink = [{
-                    href: 'css/header.min.css',
-                    id: 'desktop-0'
-                },
-                {
-                    href: 'css/footer.min.css',
-                    id: 'desktop-1'
-                },
-
-            ];
-            desktopLink.forEach(({
-                href,
-                id
-            }) => {
-                const link = document.createElement('link');
-                link.rel = 'stylesheet';
-                link.href = href;
-                link.id = id;
-                document.head.appendChild(link);
-            });
-        }
-    }
-
-    updateHeaderStylesheet();
-    window.addEventListener('resize', () => {
-        console.log('Window resized to:', window.innerWidth);
-        updateHeaderStylesheet();
-
-    });
+    <script src="<?php echo $local ?>/js/headerStylesheet.min.js" >
     </script>

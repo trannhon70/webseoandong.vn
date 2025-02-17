@@ -36,8 +36,7 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
             <div id="new" class="tab-content tab-content-active">
                 <?php if (!empty($postNew)) { ?>
                 <div class="content__list">
-                    <amp-script class="content__list-left" layout="container" script="custom-script">
-                        <div class="post-item" data-slug="<?php echo $postNew[0]['slug']; ?>">
+                        <div class="post-item content__list-left" data-slug="<?php echo $postNew[0]['slug']; ?>">
                             <div class="content__list-left-img">
                                 <img loading="lazy" width="100%" height="300px"
                                     src="<?php echo $local ?>/admin/uploads/<?php echo $postNew[0]['img'] ?>" alt="...">
@@ -49,12 +48,10 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                                 <?php echo $postNew[0]['descriptions'] ?>
                             </div>
                         </div>
-                    </amp-script>
                     <div class="content__list-right">
                         <?php if (!empty($postNew) && count($postNew) > 1) {
                                 foreach (array_slice($postNew, 1) as $post) {
                             ?>
-                        <amp-script layout="container" script="custom-script">
                             <div class="post-item content__list-right-card"
                                 data-slug="<?php echo $postNew[0]['slug']; ?>">
                                 <div class="content__list-right-card-left">
@@ -70,7 +67,6 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                                         src="<?php echo $local ?>/admin/uploads/<?php echo $post['img'] ?>" alt="...">
                                 </div>
                             </div>
-                        </amp-script>
                         <?php }
                             } ?>
                     </div>
@@ -84,8 +80,7 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
             <div id="popular" class="tab-content">
                 <?php if (!empty($postView)) { ?>
                 <div class="content__list">
-                    <amp-script class="content__list-left" layout="container" script="custom-script">
-                        <div class="post-item" data-slug="<?php echo $postView[0]['slug']; ?>">
+                        <div class="post-item content__list-left" data-slug="<?php echo $postView[0]['slug']; ?>">
                             <div class="content__list-left-img">
                                 <img loading="lazy" width="100%" height="300px"
                                     src="<?php echo $local ?>/admin/uploads/<?php echo $postView[0]['img'] ?>"
@@ -98,12 +93,10 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                                 <?php echo $postView[0]['descriptions'] ?>
                             </div>
                         </div>
-                    </amp-script>
                     <div class="content__list-right">
                         <?php if (!empty($postView) && count($postView) > 1) {
                                 foreach (array_slice($postView, 1) as $view) {
                             ?>
-                        <amp-script layout="container" script="custom-script">
                             <div class="post-item content__list-right-card"
                                 data-slug="<?php echo $postView[0]['slug']; ?>">
                                 <div class="content__list-right-card-left">
@@ -119,7 +112,6 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                                         src="<?php echo $local ?>/admin/uploads/<?php echo $view['img'] ?>" alt="...">
                                 </div>
                             </div>
-                        </amp-script>
                         <?php }
                             } ?>
                     </div>
@@ -233,7 +225,6 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                     <?php if (!empty($postSuckhoe)) {
                         foreach ($postSuckhoe as $post) {
                     ?>
-                    <amp-script  layout="container" script="custom-script">
                     <div data-slug="<?php echo $post['slug']; ?>" class="post-item post__list-item-card">
                         <div class="post__list-item-card-left">
                             <h5><?php echo $post['title'] ?></h5>
@@ -244,7 +235,6 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                                 src="<?php echo $local ?>/admin/uploads/<?php echo $post['img'] ?>" alt="...">
                         </div>
                     </div>
-                    </amp-script>
                     <?php }
                     } else { ?>
                     <div style="display: flex; align-items: center; justify-content: center; height: 300px; ">Chưa có
@@ -258,7 +248,7 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                     <?php if (!empty($postdinhDuong)) {
                         foreach ($postdinhDuong as $post) {
                     ?>
-                   <amp-script  layout="container" script="custom-script">
+                  
                     <div data-slug="<?php echo $post['slug']; ?>" class="post-item post__list-item-card">
                         <div class="post__list-item-card-left">
                             <h5><?php echo $post['title'] ?></h5>
@@ -269,7 +259,6 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                                 src="<?php echo $local ?>/admin/uploads/<?php echo $post['img'] ?>" alt="...">
                         </div>
                     </div>
-                    </amp-script>
                     <?php }
                     } else { ?>
                     <div style="display: flex; align-items: center; justify-content: center; height: 300px; ">Chưa có
@@ -329,7 +318,7 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
         }, 500);
     }
     </script>
-    <script id="custom-script" type="text/javascript" target="amp-script">
+    <script >
     (function() {
         document.querySelectorAll(".post-item").forEach(function(item) {
             item.addEventListener("click", function(event) {
