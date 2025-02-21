@@ -53,7 +53,7 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                                 foreach (array_slice($postNew, 1) as $post) {
                             ?>
                             <div class="post-item content__list-right-card"
-                                data-slug="<?php echo $postNew[0]['slug']; ?>">
+                                data-slug="<?php echo $post['slug']; ?>">
                                 <div class="content__list-right-card-left">
                                     <div class="content__list-left-title">
                                         <?php echo $post['title'] ?>
@@ -98,7 +98,7 @@ $postdinhDuong = $bai_viet->getDSBaiVietByIdBenh(28, $limitdinhDuong);
                                 foreach (array_slice($postView, 1) as $view) {
                             ?>
                             <div class="post-item content__list-right-card"
-                                data-slug="<?php echo $postView[0]['slug']; ?>">
+                                data-slug="<?php echo $view['slug']; ?>">
                                 <div class="content__list-right-card-left">
                                     <div class="content__list-left-title">
                                         <?php echo $view['title'] ?>
