@@ -61,8 +61,8 @@ setcookie(
    
     header('Server-Timing: db;desc="Database";dur=' . $dbReadTotalTime);
 
-    // $local ='http://localhost/_andong/webseoandong.vn'
-    $local ='https://www.vnbacsionline.com'
+    $local ='http://localhost/_andong/webseoandong.vn'
+    // $local ='https://www.vnbacsionline.com'
     ?>
 
 <?php
@@ -81,7 +81,7 @@ setcookie(
     <meta name="amp-script-src" content="sha384-1vNzwRfDkPJUDM7qB4z4jDKb6e98tjy8j-VcmKvImJOFkhBKPkIuWmTprT32Yhhy">
     <link rel="canonical" href="https://www.vnbacsionline.com<?php echo $_SERVER['REQUEST_URI']; ?>" />
 
-    <link rel="icon" href="<?php echo $local ?>/images/icons/icon_logocm.jpg" type="image/x-icon">
+    <link rel="icon" href="<?php echo $local ?>/images/icons/icon_logocm.png" type="image/x-icon">
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
