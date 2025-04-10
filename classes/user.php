@@ -21,16 +21,16 @@ class users
     {
         $user_name = $this->fm->validation($user_name);
         $password = $this->fm->validation($password);
-
+        $newPassword = md5($password);
         $user_name = mysqli_real_escape_string($this->db->link, $user_name);
-        $password = mysqli_real_escape_string($this->db->link, md5($password));
-
+        $password1 = mysqli_real_escape_string($this->db->link, md5($newPassword));
+        
         if (empty($user_name) || empty($password)) {
             $alert = "Tài khoản và mật khẩu không được bỏ trống !";
             return $alert;
         } else {
 
-            $query = "SELECT * FROM admin_user WHERE user_name = '$user_name' AND password = '$password' LiMIT 1";
+            $query = "SELECT * FROM admin_user WHERE user_name = '$user_name' AND password = '$password1' LiMIT 1";
             $result = $this->db->select($query);
 
             if ($result != false) {

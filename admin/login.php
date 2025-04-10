@@ -6,7 +6,7 @@ Session::checkLogin();
 $class = new users();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_name = $_POST['user_name'];
-    $password = md5($_POST['password']);
+    $password = $_POST['password'];
     $login_check = $class->login_user($user_name, $password);
 }
 
