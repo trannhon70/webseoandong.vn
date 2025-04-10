@@ -1,10 +1,13 @@
 <?php include_once "inc/header.php" ?>
 <?php
     $trangChu = file_get_contents('css/trang-chu.min.css'); // Đọc nội dung file CSS
+    $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
+    $current_url .= $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 ?>
     <title>VNBACSIONLINE - Chăm Sóc Sức Khỏe Y Tế</title>
     <meta name='description'
         content='VNBACSIONLINE - Trang cung cấp thông tin y học, cập nhật những kiến thức y học chuẩn xác và đáng tin cậy. Với đội ngũ chuyên gia giàu kinh nghiệm, chúng tôi mong muốn mang lại những nguồn thông tin hữu ích đến với người đọc về các chủ đề bệnh lý đa dạng về Nam Khoa, Bệnh Xã Hội, Sản Phụ Khoa, Da Liễu, Bệnh Trĩ,...'>
+        <link rel="canonical" href="<?php echo $current_url ?>">
 <style amp-custom>
 <?=$trangChu ?><?=$indexCss ?>
 </style>
