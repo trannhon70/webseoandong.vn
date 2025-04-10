@@ -78,7 +78,7 @@ setcookie(
     <meta name="google-site-verification" content="BcfKZyCch1ub8p7xuoJRoiY8YIxrqDIWOoSGCC-xZdc" />
     <meta name="amp-script-src" content="sha384-1vNzwRfDkPJUDM7qB4z4jDKb6e98tjy8j-VcmKvImJOFkhBKPkIuWmTprT32Yhhy">
     <link rel="canonical" href="https://www.vnbacsionline.com<?php echo $_SERVER['REQUEST_URI']; ?>" />
-
+    
     <link rel="icon" href="<?php echo $local ?>/images/icons/icon_logocm.png" type="image/x-icon">
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
