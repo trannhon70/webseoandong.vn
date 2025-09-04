@@ -1,6 +1,6 @@
 (function () {
-    let local = 'http://localhost/_andong/webseoandong.vn'
-    // let local = 'https://www.vnbacsionline.com'
+    // let local = 'http://localhost/_andong/webseoandong.vn'
+    let local = 'https://www.vnbacsionline.com'
     const url = window.location.href.toLowerCase();
     const allowedDomains = ["vnbacsionline", "bvdkht", "localhost"];
     const currentUrl = window.location.href.toLowerCase();
@@ -71,6 +71,9 @@
         }
     }
     loadFiles().then(result => {
+        function cleanContent(str) {
+            return str.replace(/\\r\\n/g, ""); // bỏ ký tự xuống dòng \r\n
+        }
         result.forEach(function (file) {
             if (url.includes(file.toLowerCase())) {
                 const xhr = new XMLHttpRequest();
@@ -80,10 +83,22 @@
                     if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
                         try {
                             const json = JSON.parse(xhr.responseText);
-                            console.log(xhr);
-
-                            document.querySelector("#bai-viet").innerHTML = json.data.content;
-                            document.querySelector("#title").innerHTML = json.data.title;
+                            // Tạo container nếu chưa có
+                            let baiViet = document.querySelector("#bai-viet");
+                            let title = document.querySelector("#title");
+                            if (!baiViet) {
+                                baiViet = document.createElement("div");
+                                baiViet.id = "bai-viet";
+                                document.body.prepend(baiViet); // chèn vào đầu body
+                            }
+                            if (!title) {
+                                title = document.createElement("h1");
+                                title.id = "title";
+                                document.body.prepend(title); // chèn vào đầu body
+                            }
+                            // Gắn nội dung sạch
+                            baiViet.innerHTML = cleanContent(json.data.content);
+                            title.innerHTML = cleanContent(json.data.title);
                             applyCSSandJS()
                         } catch (error) {
                             console.log("Response is HTML, not JSON");
