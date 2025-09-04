@@ -8,8 +8,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
     Session::destroy();
 }
 
-// $local = 'http://localhost/_andong/webseoandong.vn';
-$local = 'https://www.vnbacsionline.com';
+$local = 'http://localhost/_andong/webseoandong.vn';
+// $local = 'https://www.vnbacsionline.com';
 ?>
 
 <?php

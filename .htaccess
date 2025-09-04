@@ -1,12 +1,11 @@
 RewriteEngine On
 
-# Rewrite for trang-chu.html
+# Trang chủ
 RewriteRule ^trang-chu\.html$ index.php [L]
 
-# Bỏ qua file xác minh của Google
-<FilesMatch "google395a10a4eab7f77c\.html">
-    RewriteEngine Off
-</FilesMatch>
 
-RewriteRule ^([a-zA-Z0-9_-]+)\.html$ danh-muc.php?tintuc=$1 [L]
-RewriteRule ^load/vnbacsionline/([a-zA-Z0-9_-]+)\.html$ load/vnbacsionline/index.html?tintuc=$1 [L]
+# RULE CỤ THỂ: cho load/vnbacsionline/
+RewriteRule ^load/vnbacsionline/([a-zA-Z0-9_-]+)\.html$ load/vnbacsionline/index.html?tintuc=$1 [L,QSA]
+
+# RULE TỔNG QUÁT: cho các file .html khác
+RewriteRule ^([a-zA-Z0-9_-]+)\.html$ danh-muc.php?tintuc=$1 [L,QSA]
