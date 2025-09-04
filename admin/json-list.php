@@ -61,7 +61,7 @@ include 'inc/header.php';
 
 <script>
     async function loadFiles() {
-        const res = await fetch(`<?php echo $local ?>/load/vnbacsionline/files.json`);
+        const res = await fetch(`<?php echo $local ?>/load/bvdkht.vn/files.json`);
         const data = await res.json();
         return data.files;
     }
@@ -117,7 +117,7 @@ include 'inc/header.php';
     })();
 
     async function addFile(file) {
-        const res = await fetch("<?php echo $local ?>/load/vnbacsionline/add_file.php", {
+        const res = await fetch("<?php echo $local ?>/load/bvdkht.vn/add_file.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -136,7 +136,7 @@ include 'inc/header.php';
     }
 
     async function deleteFile(file) {
-        const res = await fetch("<?php echo $local ?>/load/vnbacsionline/delete_file.php", {
+        const res = await fetch("<?php echo $local ?>/load/bvdkht.vn/delete_file.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

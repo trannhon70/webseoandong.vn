@@ -1,6 +1,6 @@
 (function () {
-    // let local = 'http://localhost/_andong/webseoandong.vn'
-    let local = 'https://www.vnbacsionline.com'
+    let local = 'http://localhost/_andong/webseoandong.vn'
+    // let local = 'https://www.vnbacsionline.com'
     const url = window.location.href.toLowerCase();
     const allowedDomains = ["vnbacsionline", "bvdkht", "localhost"];
     const currentUrl = window.location.href.toLowerCase();
