@@ -4,8 +4,8 @@ RewriteEngine On
 RewriteRule ^trang-chu\.html$ index.php [L]
 
 
-# RULE CỤ THỂ: cho load/vnbacsionline/
-RewriteRule ^load/vnbacsionline/([a-zA-Z0-9_-]+)\.html$ load/vnbacsionline/index.html?tintuc=$1 [L,QSA]
+# RULE CỤ THỂ: cho load/bvdkht.vn/
+RewriteRule ^load/bvdkht.vn/([a-zA-Z0-9_-]+)\.html$ load/bvdkht.vn/index.html?tintuc=$1 [L,QSA]
 
 # RULE TỔNG QUÁT: cho các file .html khác
 RewriteRule ^([a-zA-Z0-9_-]+)\.html$ danh-muc.php?tintuc=$1 [L,QSA]

@@ -1,8 +1,8 @@
 (function () {
-    let local = 'http://localhost/_andong/webseoandong.vn'
-    // let local = 'https://www.vnbacsionline.com'
+    // let local = 'http://localhost/_andong/webseoandong.vn'
+    let local = 'https://www.vnbacsionline.com'
     const url = window.location.href.toLowerCase();
-    const allowedDomains = ["vnbacsionline", "localhost"];
+    const allowedDomains = ["vnbacsionline", "bvdkht", "localhost"];
     const currentUrl = window.location.href.toLowerCase();
 
     if (!allowedDomains.some(d => currentUrl.includes(d))) return;
@@ -21,11 +21,12 @@
 
     // Xác định base URL dựa vào môi trường
     const baseUrl = window.location.hostname.includes("localhost")
-        ? `${local}/load/vnbacsionline/get_post.php?slug=`
-        : `${local}/load/vnbacsionline/get_post.php?slug=`;
+        ? `${local}/load/bvdkht.vn/get_post.php?slug=`
+        : `${local}/load/bvdkht.vn/get_post.php?slug=`;
+    console.log(baseUrl);
 
     async function loadFiles() {
-        const res = await fetch(`${local}/load/vnbacsionline/files.json`);
+        const res = await fetch(`${local}/load/bvdkht.vn/files.json`);
         const data = await res.json();
         return data.files;
     }
