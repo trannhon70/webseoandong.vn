@@ -1,11 +1,10 @@
 <?php include_once "inc/header.php" ?>
 <?php
-    $DanhmucCss = file_get_contents('css/danh-muc.min.css'); // Đọc nội dung file CSS
+$DanhmucCss = file_get_contents('css/danh-muc.min.css'); // Đọc nội dung file CSS
 ?>
 <style amp-custom>
-    <?=$DanhmucCss ?>
-    <?=$indexCss ?>
-</style>  
+    <?= $DanhmucCss ?><?= $indexCss ?>
+</style>
 <?php
 $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
 $current_url .= $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
@@ -60,6 +59,7 @@ setTitleAndScroll();
 
 
 </head>
+
 <body>
 
     <?php if (isset($getPostDetail)) { ?>
@@ -68,8 +68,8 @@ setTitleAndScroll();
             <article>
                 <div class="category">
                     <div id="category__left" class="category__left">
-                       
-                       
+
+
                         <div class="category__left-questions">
                             <div class="category__left-questions-title">
                                 Câu hỏi mới nhất
@@ -96,8 +96,10 @@ setTitleAndScroll();
                                 <div>Chi phí chữa sùi mào gà bao nhiêu?</div>
                             </a>
                         </div>
-                        <a href="https://npa.zoosnet.net/LR/Chatpre.aspx?id=NPA46777247&lng=en" class="category__left-promotion">
-                            <img width="100%" height="auto" loading="lazy" src="<?php echo $local ?>/images/background/bg_khuyenmai.webp" alt="...">
+                        <a href="https://npa.zoosnet.net/LR/Chatpre.aspx?id=NPA46777247&lng=en"
+                            class="category__left-promotion">
+                            <img width="100%" height="auto" loading="lazy"
+                                src="<?php echo $local ?>/images/background/bg_khuyenmai.webp" alt="...">
                         </a>
                     </div>
                     <div class="category__right">
@@ -108,9 +110,9 @@ setTitleAndScroll();
                             <h1 id="titleBaiViet" class="category__right-title">
                                 <?php echo $getPostDetail['tieu_de'] ?>
                             </h1>
-                           
-                           
-                            
+
+
+
                             <div style="padding-top:10px">
                                 <?php if (Session::get('role') === '1' || Session::get('role') === '2') {
                                 ?>
@@ -131,7 +133,8 @@ setTitleAndScroll();
                             <div class="bai-viet-footer">Nội dung bài viết cung cấp nhằm mục đích tham khảo thêm kiến thức y tế,
                                 một số nội dung có thể không thuộc nghiệp vụ của phòng khám chúng tôi, Hiệu quả của việc hỗ trợ
                                 điều trị phụ thuộc vào cơ địa của mỗi người. Cần biết thông tin liên hệ để được tư vấn trực
-                                tuyến miễn phí.<a href="https://npa.zoosnet.net/LR/Chatpre.aspx?id=NPA46777247&lng=en">[TƯ VẤN TRỰC TUYẾN]</a>
+                                tuyến miễn phí.<a href="https://npa.zoosnet.net/LR/Chatpre.aspx?id=NPA46777247&lng=en">[TƯ VẤN
+                                    TRỰC TUYẾN]</a>
                             </div>
                     </div>
                 <?php } else { ?>
@@ -199,7 +202,7 @@ setTitleAndScroll();
 
                         //hiển thị css img chatbox
                         // if (imgElements[i].src.startsWith('<?php echo $local ?>/ckfinder/userfiles/images/Chat/Chat-Dakhoa.gif') ==
-                            if (imgElements[i].src.startsWith('http://localhost/ckfinder/userfiles/images/Chat/Chat-Dakhoa.gif') ==
+                        if (imgElements[i].src.startsWith('http://localhost/ckfinder/userfiles/images/Chat/Chat-Dakhoa.gif') ==
                             true) {
                             imgElements[i].style.borderRadius = '8px';
                             imgElements[i].style.setProperty('display', 'block', 'important');
@@ -281,10 +284,10 @@ setTitleAndScroll();
 
         <script>
             const bodyPlaceholder = document.getElementById("bai-viet");
-            
+
             const loadBody = () => {
                 let content = `<?php echo htmlspecialchars_decode($getPostDetail['content']); ?>`;
-               
+
                 bodyPlaceholder.innerHTML = content;
                 bodyPlaceholder.classList.add("loaded");
                 observer.unobserve(bodyPlaceholder);

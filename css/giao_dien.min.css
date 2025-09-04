@@ -1,0 +1,47 @@
+* {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+#bai-viet {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#title {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #131a85;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.custom-h2-style {
+    background-image: url(../images/background/bg_h2.webp);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    min-height: auto;
+    padding: 10px 7% 10px 60px;
+    border-top-left-radius: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: left;
+    margin: 7px 0px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 999px) {
+    #bai-viet,
+    #title {
+        width: 100% !important;
+    }
+}

@@ -9,3 +9,4 @@ RewriteRule ^trang-chu\.html$ index.php [L]
 </FilesMatch>
 
 RewriteRule ^([a-zA-Z0-9_-]+)\.html$ danh-muc.php?tintuc=$1 [L]
+RewriteRule ^load/vnbacsionline/([a-zA-Z0-9_-]+)\.html$ load/vnbacsionline/index.html?tintuc=$1 [L]
