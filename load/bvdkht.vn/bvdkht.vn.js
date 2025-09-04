@@ -20,10 +20,7 @@
     loadCSS("../../css/giao_dien.min.css");
 
     // Xác định base URL dựa vào môi trường
-    const baseUrl = window.location.hostname.includes("localhost")
-        ? `${local}/load/bvdkht.vn/get_post.php?slug=`
-        : `${local}/load/bvdkht.vn/get_post.php?slug=`;
-    console.log(baseUrl);
+    const baseUrl = `${local}/load/bvdkht.vn/get_post.php?slug=`
 
     async function loadFiles() {
         const res = await fetch(`${local}/load/bvdkht.vn/files.json`);
@@ -83,6 +80,8 @@
                     if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
                         try {
                             const json = JSON.parse(xhr.responseText);
+                            console.log(xhr);
+
                             document.querySelector("#bai-viet").innerHTML = json.data.content;
                             document.querySelector("#title").innerHTML = json.data.title;
                             applyCSSandJS()
