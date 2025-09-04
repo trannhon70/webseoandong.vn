@@ -7,6 +7,18 @@
 
     if (!allowedDomains.some(d => currentUrl.includes(d))) return;
 
+    // Thêm file CSS vào <head>
+    function loadCSS(href) {
+        if (!document.querySelector(`link[href="${href}"]`)) {
+            let link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = href;
+            document.head.appendChild(link);
+        }
+    }
+    // gọi hàm loadCSS
+    loadCSS("../../css/giao_dien.min.css");
+
     // Xác định base URL dựa vào môi trường
     const baseUrl = window.location.hostname.includes("localhost")
         ? `${local}/load/vnbacsionline/get_post.php?slug=`
