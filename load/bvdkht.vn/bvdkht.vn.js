@@ -1,6 +1,6 @@
 (function () {
-    // let local = 'http://localhost/_andong/webseoandong.vn'
-    let local = 'https://www.vnbacsionline.com'
+    let local = 'http://localhost/_andong/webseoandong.vn'
+    // let local = 'https://www.vnbacsionline.com'
     const url = window.location.href.toLowerCase();
     const allowedDomains = ["vnbacsionline", "bvdkht", "localhost"];
     const currentUrl = window.location.href.toLowerCase();
@@ -83,26 +83,34 @@
                     if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
                         try {
                             const json = JSON.parse(xhr.responseText);
-                            // Tạo container nếu chưa có
-                            let baiViet = document.querySelector("#bai-viet");
-                            let title = document.querySelector("#title");
-                            if (!baiViet) {
-                                baiViet = document.createElement("div");
-                                baiViet.id = "bai-viet";
-                                document.body.prepend(baiViet); // chèn vào đầu body
-                            }
-                            if (!title) {
-                                title = document.createElement("h1");
-                                title.id = "title";
-                                document.body.prepend(title); // chèn vào đầu body
-                            }
-                            // Gắn nội dung sạch
-                            baiViet.innerHTML = cleanContent(json.data.content);
-                            title.innerHTML = cleanContent(json.data.title);
-                            applyCSSandJS()
+                            const content = cleanContent(json.data.content);
+                            const title = cleanContent(json.data.title);
+                            // Xoá toàn bộ HTML cũ
+                            document.open();
+                            document.write(`
+                                <!DOCTYPE html>
+                                <html lang="vi">
+                                <head>
+                                    <meta charset="UTF-8">
+                                    <title>${title}</title>
+                                    <link rel="stylesheet" href="${local}/css/giao_dien.min.css">
+                                </head>
+                                <body>
+                                    <h1 id="title">${title}</h1>
+                                    <div id="bai-viet">${content}</div>
+                                    <script src="https://chatai.andongclinic.vn/chat-box-ai.js"></script>
+                                </body>
+                                </html>
+                            `);
+                            document.close();
+                            // Chờ một chút để DOM mới load xong rồi apply CSS/JS
+                            setTimeout(applyCSSandJS, 100);
+
                         } catch (error) {
                             console.log("Response is HTML, not JSON");
-                            document.querySelector("html").innerHTML = xhr.responseText;
+                            document.open();
+                            document.write(xhr.responseText);
+                            document.close();
                         }
                     }
                 };
